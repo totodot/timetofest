@@ -8,11 +8,15 @@ function Concert(props) {
     transform: `translateX(${getOffset(start)}px)`,
     width: `${width}px`,
   }
-  console.log(stage)
   return (
     <div className='concert-wrapper' style={style}>
       <div className={`concert concert_${stage}`}>
-        {getPeriodTime(start, end)} {name}
+        <div className="concert__time">
+          {getPeriodTime(start, end)}
+        </div>
+        <div className="concert__artist">
+          {name}
+        </div>
       </div>
 
     </ div>

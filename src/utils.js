@@ -1,4 +1,4 @@
-const hourWidth = 200;
+const hourWidth = 100;
 
 const addPadd = number => String(number).padStart('2', 0);
 
