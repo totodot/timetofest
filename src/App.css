@@ -24,11 +24,16 @@
   font-weight: 800;
   transition: all 0.3s;
   cursor: pointer;
+  text-align: center;
 }
 
 .day_active, .day:hover{
   background: black;
   color: white;
+}
+
+.day__name{
+  font-size:0.5em;
 }
 
 .timetable{
@@ -37,6 +42,7 @@
 
 
 .timelines{
+  cursor: grab;
   overflow-x: scroll;
 }
 
@@ -83,6 +89,12 @@
   font-weight: 800;
   font-size: 0.8em;
   text-transform: uppercase;
+}
+
+.concert__extra{
+  font-weight:800;
+  text-transform: uppercase;
+  font-size:0.6em;
 }
 
 .concert_main{

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Timetable from './Timetable';
 import config from './config';
+import { getDayName } from './utils';
 
 const getActiveDayId = (config) => {
   const current = new Date();
@@ -20,10 +21,14 @@ function App() {
   return (
     <div className="App">
       <div className="days">
-        {config.map(({ id, name }) => (
-          <div key={id} className={`day ${id === activeDayId ? 'day_active' : ''}`} onClick={() => setActiveDatId(id)}>{name}</div>
+        {config.map(({ id, name, date }) => (
+          <div key={id} className={`day ${id === activeDayId ? 'day_active' : ''}`} onClick={() => setActiveDatId(id)}>
+            <div>{name}</div>
+            <div className="day__name">{getDayName(date)}</div>
+          </div>
         ))}
       </div>
+      
       <Timetable timetable={timetable} />
 
     </div>

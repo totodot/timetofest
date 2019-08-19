@@ -1,6 +1,10 @@
 import React from 'react';
 import { getWidth, getOffset } from './utils';
 import Concert from './Concert';
+import ScrollContainer from 'react-indiana-drag-scroll';
+
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+console.log(isMobile)
 
 function Timetable(props) {
   const { timetable } = props;
@@ -16,6 +20,15 @@ function Timetable(props) {
   const { min, max } = getMinDate(concerts);
   const width = getWidth(min, max);
   const getPercentageOffset = (start) => getOffset(min, max, start);
+  const Component = timetable.map(({ id, concerts }) => (
+    <div style={{ width: `${width}px` }} key={id}>
+      <div className="timeline">
+        {concerts.map(concert => (
+          <Concert key={concert.id} {...concert} stage={id} getOffset={getPercentageOffset} />
+        ))}
+      </div>
+    </div>
+  ));
 
   return (
     <div className="timetable">
@@ -29,15 +42,7 @@ function Timetable(props) {
         ))}
       </div>
       <div className="timelines">
-        {timetable.map(({ id, concerts }) =>
-          <div style={{ width: `${width}px` }} key={id}>
-            <div className="timeline">
-              {concerts.map(concert => (
-                <Concert key={concert.id} {...concert} stage={id} getOffset={getPercentageOffset} />
-              ))}
-            </div>
-          </div>
-        )}
+        {isMobile ? Component : <ScrollContainer>{Component}</ScrollContainer>}
       </div>
     </div>
   );

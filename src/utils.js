@@ -1,7 +1,20 @@
 const hourWidth = 100;
+const daysNames = {
+    0: "Sunday",
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday",
+}
 
 const addPadd = number => String(number).padStart('2', 0);
-
+export const getDayName = date => {
+    const _date = new Date(date);
+    const day = _date.getDay();
+    return daysNames[day];
+}
 export const getWidthByDate = (min, max) => {
     const diffInHour = Math.abs((new Date(max) - new Date(min)) / (60 * 60 * 1000));
     const width = hourWidth * diffInHour;
@@ -15,7 +28,10 @@ export const getTime = date => {
     return `${addPadd(dateObj.getHours())}:${addPadd(dateObj.getMinutes())}`;
 }
 
-export const getPeriodTime = (date1, date2) => `${getTime(date1)}-${getTime(date2)}`
+export const getPeriodTime = (date1, date2, extra) => {
+
+    return `${getTime(date1)}-${extra === '?' ? '?(' : ''}${getTime(date2)}${extra === '?' ? ')' : ''}`
+}
 
 export const getOffset = (min, max, start) => {
     const _min = +new Date(min);
