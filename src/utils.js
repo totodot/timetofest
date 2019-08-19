@@ -33,10 +33,29 @@ export const getPeriodTime = (date1, date2, extra) => {
     return `${getTime(date1)}-${extra === '?' ? '?(' : ''}${getTime(date2)}${extra === '?' ? ')' : ''}`
 }
 
-export const getOffset = (min, max, start) => {
+export const getOffset = (min, max, start, a) => {
     const _min = +new Date(min);
     const _max = +new Date(max);
     const _start = +new Date(start);
     const width = getWidthByDate(_min, _max);
     return (_start - _min) / (_max - _min) * width;
+}
+
+const LSkey = 'fav';
+
+const getLSValue = () => JSON.parse(localStorage.getItem(LSkey) || JSON.stringify([]));
+const setLSValue = (value) => localStorage.setItem(LSkey, JSON.stringify(value));
+
+export const addToLS = id => {
+    const fav = getLSValue();
+    setLSValue([...fav, id]);
+}
+
+export const existInLS = id => {
+    return getLSValue().find(i => i === id);
+}
+
+export const removeFromLS = id => {
+    const fav = getLSValue();
+    setLSValue([...fav.filter(i => i !== id)])
 }

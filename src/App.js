@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Timetable from './Timetable';
 import config from './config';
-import { getDayName } from './utils';
+import { getDayName, existInLS } from './utils';
 
 const getActiveDayId = (config) => {
   const current = new Date();
@@ -17,7 +17,16 @@ const getActiveDayId = (config) => {
 
 function App() {
   const [activeDayId, setActiveDatId] = useState(getActiveDayId(config));
+  const [isFavActive, setIsFavActive] = useState(false);
+
   const { timetable } = config.find(({ id }) => id === activeDayId);
+  const filteredTimetable = isFavActive ? timetable.map(({ concerts, ...rest }) => {
+    return {
+      ...rest,
+      concerts: concerts.filter(({ id }) => existInLS(id))
+    };
+  }) : timetable;
+  console.log(filteredTimetable)
   return (
     <div className="App">
       <div className="days">
@@ -27,9 +36,9 @@ function App() {
             <div className="day__name">{getDayName(date)}</div>
           </div>
         ))}
+        <div className={`hearts ${isFavActive ? 'hearts_active' : ''}`} onClick={() => setIsFavActive(!isFavActive)}>❤️❤️❤️</div>
       </div>
-      
-      <Timetable timetable={timetable} />
+      <Timetable timetable={filteredTimetable} />
 
     </div>
   );

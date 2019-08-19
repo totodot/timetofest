@@ -16,7 +16,11 @@
   margin: 20px 0;
 }
 
-.day{
+.day, .hearts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   border: 3px solid black;
   margin-left: 10px;
@@ -25,6 +29,14 @@
   transition: all 0.3s;
   cursor: pointer;
   text-align: center;
+}
+
+.hearts{
+  margin-left: 30px;
+}
+
+.hearts_active{
+  background: black;
 }
 
 .day_active, .day:hover{
@@ -44,6 +56,11 @@
 .timelines{
   cursor: grab;
   overflow-x: scroll;
+}
+
+.timelines__scroll{
+  position: relative;
+  overflow: hidden;
 }
 
 .timeline, .stage{
@@ -78,6 +95,8 @@
   height: 100%;
   box-sizing: border-box;
   padding: 5px;
+  overflow: hidden;
+  position: relative;
 }
 
 .concert__time{
@@ -95,6 +114,22 @@
   font-weight:800;
   text-transform: uppercase;
   font-size:0.6em;
+}
+
+.concert__fav{
+  position: absolute;
+  top:0;
+  right:0;
+  width: 30px;
+  height:30px;
+  background: rgba(0,0,0,0.8);
+  transform: translate(50%, -50%) rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.concert__fav_active{
+  opacity:1;
 }
 
 .concert_main{
@@ -125,11 +160,12 @@
   background-color: var(--astral-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.time{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: black;
+  opacity: 0.3;
+  transition: transform 1s;
 }
