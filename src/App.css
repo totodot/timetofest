@@ -1,0 +1,88 @@
+:root{
+  --main-color: #FBFC87;
+  --tent-color: #FFAAF4;
+  --silesia-color: #4BF8AD;
+  --new-color: #FFE793;
+  --smolna-color: black;
+  --raban-color: red;
+  --astral-color: blue;
+  --cell-height: 50px;
+}
+
+.timetable{
+  display:flex;
+  margin: 32px;
+}
+
+
+.timelines{
+  overflow-x: scroll;
+}
+
+.timeline, .stage{
+  display: flex;
+  position: relative;
+  height: var(--cell-height);
+  margin: 5px 0;
+}
+
+
+.stage__name{
+  width: 150px;
+  box-sizing: border-box;
+  padding: 2px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.concert-wrapper{
+  box-sizing: border-box;
+  padding: 0 2px;
+  position: absolute;
+  height: 100%;
+}
+
+.concert{
+  height: 100%;
+}
+
+.concert_main{
+  background-color: var(--main-color);
+}
+
+.concert_tent{
+  background-color: var(--tent-color);
+}
+
+.concert_silesia{
+  background-color: var(--silesia-color);
+}
+
+.concert_new{
+  background-color: var(--new-color);
+}
+
+.concert_smolna{
+  background-color: var(--smolna-color);
+}
+
+.concert_raban{
+  background-color: var(--raban-color);
+}
+
+.concert_astral{
+  background-color: var(--astral-color);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
