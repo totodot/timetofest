@@ -26,7 +26,6 @@ function App() {
       concerts: concerts.filter(({ id }) => existInLS(id))
     };
   }) : timetable;
-  console.log(filteredTimetable)
   return (
     <div className="App">
       <div className="days">

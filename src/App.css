@@ -61,6 +61,7 @@
 .timelines__scroll{
   position: relative;
   overflow: hidden;
+  padding: 12px 0;
 }
 
 .timeline, .stage{
@@ -70,7 +71,9 @@
   margin: 5px 0;
 }
 
-
+.stages{
+  padding: 12px 0;
+}
 .stage__name{
   width: 80px;
   box-sizing: border-box;
@@ -160,12 +163,36 @@
   background-color: var(--astral-color);
 }
 
-.time{
+.time, .grid{
   position: absolute;
   top: 0;
   bottom: 0;
   width: 2px;
-  background: black;
-  opacity: 0.3;
+  background: rgba(0,0,0,0.3);
   transition: transform 1s;
+}
+
+.time{
+  background: rgba(239,0,101);
+}
+
+.grid{
+  width: 1px;
+}
+
+.grid__time{
+  margin-left: 0.3em;
+  font-size: 0.8em;
+  color: black;
+  font-weight: 600;
+}
+
+
+.no-selection{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-transform: uppercase;
+  text-align: center;
 }
