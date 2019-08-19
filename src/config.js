@@ -138,8 +138,8 @@ export default [
                     start: '2019-08-23 16:15',
                     end: '2019-08-23 18:00'
                 }, {
-                    id: "viagraboys",
-                    name: "viagra boys",
+                    id: "honeycomb",
+                    name: "honeycomb",
                     start: '2019-08-23 18:00',
                     end: '2019-08-23 20:00'
                 }, {
