@@ -9,9 +9,10 @@ const getHourPeriods = (min, max) => {
   const periods = [];
   const date = new Date(min);
   date.setMinutes(0);
+  
   while (date < max) {
-    date.setHours(date.getHours() + 1);
     periods.push(new Date(date))
+    date.setHours(date.getHours() + 1);
   }
   return periods;
 }
@@ -23,7 +24,6 @@ function Timetable(props) {
   const timelinesRef = React.createRef();
 
   const concerts = timetable.reduce((all, next) => [...all, ...next.concerts], []);
-  const concertsCount = concerts.length;
   const getMinDate = concerts => concerts.reduce(({ min, max }, next) => {
     const start = new Date(next.start);
     const end = new Date(next.end);
@@ -36,7 +36,6 @@ function Timetable(props) {
   const width = getWidth(min, max) || '300';
   const getPercentageOffset = (start) => getOffset(min, max, start);
   const hourPeriods = getHourPeriods(min, max);
-  console.log(hourPeriods)
   const timeStyle = {
     transform: `translateX(${getPercentageOffset(currentDate)}px)`,
   };
@@ -70,6 +69,9 @@ function Timetable(props) {
             <div className="grid__time">
               {getTime(d)}
             </div>
+            <div className="grid__time grid__time_bottom">
+              {getTime(d)}
+            </div>
           </div>
         ))
       }
@@ -82,7 +84,7 @@ function Timetable(props) {
         ))
         }
         {concerts.length === 0 && <div className="no-selection">
-          😔😔😔Please select your favorite concerts.
+          😔😔😔Please select your favourite concerts.
         </div>
         }
 
