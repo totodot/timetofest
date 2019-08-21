@@ -434,7 +434,7 @@ export default [
                 end: '2019-08-25 00:00'
             }, {
                 id: "vall",
-                name: "vall",
+                name: "vaal",
                 start: '2019-08-25 00:00',
                 end: '2019-08-25 02:00'
             }, {
