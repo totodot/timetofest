@@ -212,6 +212,20 @@
   font-weight: 600;
 }
 
+.concert__youtube {
+  width: 24px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.concert__youtube-logo {
+  max-width: 100%;
+}
+
 @keyframes pulse {
   0% {
     opacity: 1;

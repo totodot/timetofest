@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getWidthByDate, getPeriodTime, existInLS, addToLS, removeFromLS } from './utils';
+import logo from './logo.svg';
 
 function Concert(props) {
   const { name, start, end, getOffset, stage, extraText, extraInfo, id } = props;
@@ -11,6 +12,10 @@ function Concert(props) {
       addToLS(id);
     };
     setIsFav(existInLS(id))
+  }
+  const open = (e,name) => {
+    e.stopPropagation();
+    window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(name)}`);
   }
   const width = getWidthByDate(start, end);
   const style = {
@@ -25,6 +30,9 @@ function Concert(props) {
         </div>
         <div className="concert__artist">
           {name}
+        </div>
+        <div className="concert__youtube" onClick={(e) => open(e,name)}>
+          <img className="concert__youtube-logo" src={logo} />
         </div>
         <div className="concert__extra">
           {extraText}
