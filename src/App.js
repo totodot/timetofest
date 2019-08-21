@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
 import Timetable from './Timetable';
+import Modal from './Modal';
+import Map from './Map';
+import Bus from './Bus';
 import config from './config';
 import { getDayName, existInLS } from './utils';
 
@@ -18,7 +21,17 @@ const getActiveDayId = (config) => {
 function App() {
   const [activeDayId, setActiveDatId] = useState(getActiveDayId(config));
   const [isFavActive, setIsFavActive] = useState(false);
+  const [mapOpen, setMapOpen] = useState(false);
+  const [busOpen, setBusOpen] = useState(false);
 
+  const openMap =  () => {
+    setMapOpen(!mapOpen);
+  }
+ 
+  const openBus =  () => {
+    setBusOpen(!busOpen);
+  }
+ 
   const { timetable } = config.find(({ id }) => id === activeDayId);
   const filteredTimetable = isFavActive ? timetable.map(({ concerts, ...rest }) => {
     return {
@@ -27,19 +40,28 @@ function App() {
     };
   }) : timetable;
   return (
+    <>
     <div className="App">
-      <div className="days">
+      <div className="menu">
         {config.map(({ id, name, date }) => (
-          <div key={id} className={`day ${id === activeDayId ? 'day_active' : ''}`} onClick={() => setActiveDatId(id)}>
+          <div key={id} className={`button menu__item ${id === activeDayId ? 'day_active' : ''}`} onClick={() => setActiveDatId(id)}>
             <div>{name}</div>
             <div className="day__name">{getDayName(date)}</div>
           </div>
         ))}
-        <div className={`hearts ${isFavActive ? 'hearts_active' : ''}`} onClick={() => setIsFavActive(!isFavActive)}>❤️❤️❤️</div>
+        <div className={`button  menu__item ${isFavActive ? 'hearts_active' : ''}`} onClick={() => setIsFavActive(!isFavActive)}>❤️</div>
+        <div className="button  menu__item" onClick={openMap}>🗺️</div>
+        <div className="button  menu__item" onClick={openBus}>🚌</div>
       </div>
       <Timetable timetable={filteredTimetable} />
-
+      {mapOpen && <Modal open={mapOpen} onToggle={openMap}>
+        <Map></Map>
+      </Modal>}
+      {busOpen && <Modal open={busOpen} onToggle={openBus}>
+        <Bus></Bus>
+      </Modal>}
     </div>
+    </>
   );
 }
 
