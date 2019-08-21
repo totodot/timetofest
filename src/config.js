@@ -474,7 +474,7 @@ export default [
                 end: '2019-08-25 00:00'
             }, {
                 id: "ronisize",
-                name: "ronisize",
+                name: "roni size",
                 extraText: '+ dynamite mc',
                 start: '2019-08-25 00:00',
                 end: '2019-08-25 01:30'
