@@ -1,22 +1,23 @@
-:root{
-  --main-color: #FBFC87;
-  --tent-color: #FFAAF4;
-  --silesia-color: #4BF8AD;
-  --new-color: #FFE793;
-  --smolna-color: #74FEA8;
-  --raban-color: #FEFD7F;
-  --astral-color: #FE53FA;
+:root {
+  --main-color: #fbfc87;
+  --tent-color: #ffaaf4;
+  --silesia-color: #4bf8ad;
+  --new-color: #ffe793;
+  --smolna-color: #74fea8;
+  --raban-color: #fefd7f;
+  --astral-color: #fe53fa;
   --cell-height: 70px;
 }
 
-.days{
+.days {
   margin: auto;
   display: flex;
   justify-content: center;
   margin: 20px 0;
 }
 
-.day, .hearts{
+.day,
+.hearts {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,50 +32,51 @@
   text-align: center;
 }
 
-.hearts{
+.hearts {
   margin-left: 30px;
 }
 
-.hearts_active{
+.hearts_active {
   background: black;
 }
 
-.day_active, .day:hover{
+.day_active,
+.day:hover {
   background: black;
   color: white;
 }
 
-.day__name{
-  font-size:0.5em;
+.day__name {
+  font-size: 0.5em;
 }
 
-.timetable{
-  display:flex;
+.timetable {
+  display: flex;
 }
 
-
-.timelines{
+.timelines {
   cursor: grab;
   overflow-x: scroll;
 }
 
-.timelines__scroll{
+.timelines__scroll {
   position: relative;
   overflow: hidden;
   padding: 12px 0;
 }
 
-.timeline, .stage{
+.timeline,
+.stage {
   display: flex;
   position: relative;
   height: var(--cell-height);
   margin: 5px 0;
 }
 
-.stages{
+.stages {
   padding: 12px 0;
 }
-.stage__name{
+.stage__name {
   width: 80px;
   box-sizing: border-box;
   padding: 2px;
@@ -87,100 +89,108 @@
   font-weight: 800;
 }
 
-.concert-wrapper{
+.concert-wrapper {
   box-sizing: border-box;
   padding: 0 2px;
   position: absolute;
   height: 100%;
 }
 
-.concert{
+.concert {
   height: 100%;
   box-sizing: border-box;
   padding: 5px;
   overflow: hidden;
   position: relative;
+  box-shadow: inset 0 0 0 0px black;
+  transition: box-shadow 0.3;
 }
 
-.concert__time{
+.concert_active {
+  box-shadow: inset 0 0 0 2px black;
+}
+
+.concert__time {
   font-size: 0.6em;
   font-weight: 600;
 }
 
-.concert__artist{
+.concert__artist {
   font-weight: 800;
   font-size: 0.8em;
   text-transform: uppercase;
 }
 
-.concert__extra{
-  font-weight:800;
+.concert__extra {
+  font-weight: 800;
   text-transform: uppercase;
-  font-size:0.6em;
+  font-size: 0.6em;
 }
 
-.concert__fav{
+.concert__fav {
   position: absolute;
-  top:0;
-  right:0;
+  top: 0;
+  right: 0;
   width: 30px;
-  height:30px;
-  background: rgba(0,0,0,0.8);
+  height: 30px;
+  background: rgba(0, 0, 0, 0.8);
   transform: translate(50%, -50%) rotate(45deg);
   opacity: 0;
   transition: opacity 0.2s;
 }
 
-.concert__fav_active{
-  opacity:1;
+.concert__fav_active {
+  opacity: 1;
 }
 
-.concert_main{
+.concert_main {
   background-color: var(--main-color);
 }
 
-.concert_tent{
+.concert_tent {
   background-color: var(--tent-color);
 }
 
-.concert_silesia{
+.concert_silesia {
   background-color: var(--silesia-color);
 }
 
-.concert_new{
+.concert_new {
   background-color: var(--new-color);
 }
 
-.concert_smolna{
+.concert_smolna {
   background-color: var(--smolna-color);
 }
 
-.concert_raban{
+.concert_raban {
   background-color: var(--raban-color);
 }
 
-.concert_astral{
+.concert_astral {
   background-color: var(--astral-color);
 }
 
-.time, .grid{
+.time,
+.grid {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 2px;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   transition: transform 1s;
 }
 
-.time{
-  background: rgba(239,0,101);
+.time {
+  background: rgba(239, 0, 101);
+  animation: pulse 0.6s alternate infinite;
 }
 
-.grid{
+.grid {
   width: 1px;
 }
 
-.grid__time{
+.grid__time {
   margin-left: 0.3em;
   font-size: 0.8em;
   color: black;
@@ -188,17 +198,25 @@
   position: absolute;
 }
 
-.grid__time_bottom{
-  bottom:0;
+.grid__time_bottom {
+  bottom: 0;
 }
 
-
-.no-selection{
+.no-selection {
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   text-transform: uppercase;
   text-align: center;
   font-weight: 600;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }

@@ -19,7 +19,7 @@ function Concert(props) {
   }
   return (
     <div className='concert-wrapper' style={style}>
-      <div className={`concert concert_${stage}`} onClick={click}>
+      <div className={`concert concert_${stage} ${isFav ? 'concert_active' : ''}`} onClick={click}>
         <div className="concert__time">
           {getPeriodTime(start, end, extraInfo)}
         </div>
@@ -30,7 +30,6 @@ function Concert(props) {
           {extraText}
         </div>
         <div className={`concert__fav ${isFav ? 'concert__fav_active' : ''}`}>
-          F
         </div>
       </div>
 
