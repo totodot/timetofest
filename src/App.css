@@ -1,12 +1,47 @@
 :root {
-  --main-color: #fbfc87;
-  --tent-color: #ffaaf4;
-  --silesia-color: #4bf8ad;
-  --new-color: #ffe793;
-  --smolna-color: #74fea8;
-  --raban-color: #fefd7f;
-  --astral-color: #fe53fa;
+  --stage-main-color: #fbfc87;
+  --stage-tent-color: #ffaaf4;
+  --stage-silesia-color: #4bf8ad;
+  --stage-new-color: #ffe793;
+  --stage-smolna-color: #74fea8;
+  --stage-raban-color: #fefd7f;
+  --stage-astral-color: #fe53fa;
   --cell-height: 70px;
+  --primary-color: #fff;
+  --secondary-color: #000;
+  --bg-color: #fff;
+  --font-color: #000;
+  --concerts-cont-color: #000;
+}
+
+[data-theme='dark'] {
+  --stage-main-color: #e2e37a;
+  --stage-tent-color: #e699dc;
+  --stage-silesia-color: #44df9c;
+  --stage-new-color: #e6d084;
+  --stage-smolna-color: #68e597;
+  --stage-raban-color: #e5e472;
+  --stage-astral-color: #bf3ebc;
+  --primary-color: #161625;
+  --secondary-color: #fff;
+  --font-color: #fff;
+  --bg-color: #161625;
+  --heading-color: #818cab;
+  --concerts-cont-color: #000;
+}
+
+body {
+  color: var(--font-color);
+  background-color: var(--bg-color);
+}
+
+h1 {
+  text-align: center;
+}
+
+h1 span {
+  padding: 0.5rem;
+  border: 3px solid var(--secondary-color);
 }
 
 .menu {
@@ -15,10 +50,43 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 10px 0;
+  padding-top: 10px;
+  background: var(--bg-color);
+  top: 0;
 }
 
-.menu__item{
+.menu-top {
+  height: 1px;
+  background-color: blue;
+}
+
+.menu__item {
   margin-bottom: 10px;
+}
+
+.sticky-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  background: var(--bg-color);
+  transform: translateY(-100%);
+  transition: all 0.3s;
+  z-index: 90;
+  padding-top: 10px;
+}
+
+.sticky-menu_active {
+  transform: translateY(0);
+}
+
+.sticky-menu_active .menu__item {
+  padding: 2px;
 }
 
 .button {
@@ -27,31 +95,26 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  border: 3px solid black;
+  border: 3px solid var(--secondary-color);
   margin-left: 10px;
   text-transform: uppercase;
   font-weight: 800;
-  transition: all 0.3s;
+  transition: background-color 0.3s;
   cursor: pointer;
   text-align: center;
 }
 
-.button_light{
-  background: white;
+.button_light {
+  background: var(--primary-color);
 }
 
 .hearts {
   margin-left: 30px;
 }
 
-.hearts_active {
-  background: black;
-}
-
-.day_active,
-.day:hover {
-  background: black;
-  color: white;
+.button_active {
+  background: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .day__name {
@@ -88,7 +151,7 @@
   width: 80px;
   box-sizing: border-box;
   padding: 2px;
-  border: 3px solid black;
+  border: 3px solid var(--secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,12 +173,13 @@
   padding: 5px;
   overflow: hidden;
   position: relative;
-  box-shadow: inset 0 0 0 0px black;
+  box-shadow: inset 0 0 0 0px var(--secondary-color);
   transition: box-shadow 0.3;
+  color: var(--concerts-cont-color);
 }
 
 .concert_active {
-  box-shadow: inset 0 0 0 2px black;
+  box-shadow: inset 0 0 0 2px var(--secondary-color);
 }
 
 .concert__time {
@@ -139,54 +203,63 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 30px;
-  height: 30px;
-  background: rgba(0, 0, 0, 0.8);
+  width: 40px;
+  height: 40px;
+  background: var(--secondary-color);
   transform: translate(50%, -50%) rotate(45deg);
   opacity: 0;
   transition: opacity 0.2s;
 }
 
 .concert__fav_active {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 .concert_main {
-  background-color: var(--main-color);
+  background-color: var(--stage-main-color);
 }
 
 .concert_tent {
-  background-color: var(--tent-color);
+  background-color: var(--stage-tent-color);
 }
 
 .concert_silesia {
-  background-color: var(--silesia-color);
+  background-color: var(--stage-silesia-color);
 }
 
 .concert_new {
-  background-color: var(--new-color);
+  background-color: var(--stage-new-color);
 }
 
 .concert_smolna {
-  background-color: var(--smolna-color);
+  background-color: var(--stage-smolna-color);
 }
 
 .concert_raban {
-  background-color: var(--raban-color);
+  background-color: var(--stage-raban-color);
 }
 
 .concert_astral {
-  background-color: var(--astral-color);
+  background-color: var(--stage-astral-color);
 }
 
 .time,
 .grid {
   position: absolute;
   top: 0;
-  bottom: 0;
   width: 2px;
-  background: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  /* opacity: 0.3; */
   transition: transform 1s;
+}
+
+.grid__line {
+  position: absolute;
+  width: 1px;
+  top: 0;
+  bottom: 0;
+  opacity: 0.3;
+  background: var(--secondary-color);
 }
 
 .time {
@@ -194,14 +267,10 @@
   animation: pulse 0.6s alternate infinite;
 }
 
-.grid {
-  width: 1px;
-}
-
 .grid__time {
   margin-left: 0.3em;
   font-size: 0.8em;
-  color: black;
+  color: var(--secondary-color);
   font-weight: 600;
   position: absolute;
 }
@@ -245,6 +314,7 @@
 
 .modal {
   position: fixed;
+  z-index: 91;
   top: 0;
   bottom: 0;
   right: 0;
@@ -261,6 +331,15 @@
   width: 100%;
 }
 
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
 .modal__button {
   position: absolute;
   top: 10px;
@@ -268,23 +347,48 @@
   transform: translateX(-50%);
 }
 
+.modal__box {
+  z-index: 1;
+  width: 80vw;
+}
+
 .modal__map {
   max-width: 100%;
   max-height: 100%;
 }
 
-.bus__title{
+.bus__title {
   font-size: 1.4em;
 }
-.bus{
+.bus {
   padding: 16px;
-  background: black;
-  color: white;
-  width: 80%;
+  background: var(--secondary-color);
+  color: var(--primary-color);
   font-size: 0.6em;
 }
 
-a{
-  color: white;
+a {
+  color: var(--primary-color);
   text-decoration: underline;
+}
+
+.settings__title {
+  font-size: 1.4em;
+}
+.settings {
+  padding: 16px;
+  background: var(--bg-color);
+  color: var(--font-color);
+
+  font-size: 0.6em;
+}
+
+.settings .menu {
+  margin: 0;
+  padding: 0;
+}
+
+.settings h2 {
+  margin: 0;
+  text-align: center;
 }
