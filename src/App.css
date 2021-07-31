@@ -11,7 +11,7 @@
   --secondary-color: #000;
   --bg-color: #fff;
   --font-color: #000;
-  --concerts-cont-color: #000;
+  --concerts-font-color: #000;
 }
 
 [data-theme='dark'] {
@@ -27,12 +27,13 @@
   --font-color: #fff;
   --bg-color: #161625;
   --heading-color: #818cab;
-  --concerts-cont-color: #000;
+  --concerts-font-color: #000;
 }
 
 body {
   color: var(--font-color);
   background-color: var(--bg-color);
+  /* background-color: white; */
 }
 
 h1 {
@@ -127,7 +128,7 @@ h1 span {
 
 .timelines {
   cursor: grab;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 .timelines__scroll {
@@ -175,7 +176,7 @@ h1 span {
   position: relative;
   box-shadow: inset 0 0 0 0px var(--secondary-color);
   transition: box-shadow 0.3;
-  color: var(--concerts-cont-color);
+  color: var(--concerts-font-color);
 }
 
 .concert_active {

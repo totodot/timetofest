@@ -107,7 +107,7 @@ function Timetable(props) {
         ))}
         {concerts.length === 0 && (
           <div className="no-selection">
-            😔😔😔Please select your favourite concerts.
+            😔😔😔Zaserduszkuj sobie jakieś koncerty
           </div>
         )}
       </div>

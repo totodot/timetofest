@@ -85,7 +85,7 @@ function App() {
     <>
       <div className="App">
         <h1>
-          <span>CZAS NA FEST 2021</span>
+          <span>CZAS NA FEST 2021 </span>
         </h1>
         <div id="menu-top" />
         <div className="menu">

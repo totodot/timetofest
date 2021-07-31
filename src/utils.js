@@ -69,10 +69,13 @@ export const removeFromLS = (id) => {
 
 export const changeLocalStorageSettings = (values) => {
   const settings = getLSValue(LSSettingsKey);
-  setLSValue({
-    ...(settings || {}),
-    ...values,
-  }, LSSettingsKey);
+  setLSValue(
+    {
+      ...(settings || {}),
+      ...values,
+    },
+    LSSettingsKey
+  );
 };
 
-export const getLocalStorageSettings = () => getLSValue(LSSettingsKey)
+export const getLocalStorageSettings = () => getLSValue(LSSettingsKey);
