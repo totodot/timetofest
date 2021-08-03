@@ -393,3 +393,97 @@ a {
   margin: 0;
   text-align: center;
 }
+
+.search-modal {
+  color: var(--primary-color);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  /* width: 85vw; */
+  left: 0;
+  right: 0;
+}
+
+.search-modal__list {
+  overflow-y: scroll;
+  height: calc(100% - 52px);
+}
+
+.search-modal__close {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  /* : 3px solid var(--secondary-color); */
+}
+
+.search-modal__input {
+  padding: 10px;
+  display: flex;
+  flex: 1;
+  background: var(--primary-color);
+}
+
+.search-modal__empty {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1rem;
+  background: var(--primary-color);
+  padding: 10px;
+  text-align: center;
+}
+
+.search-modal__input-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.search-input {
+  width: 100%;
+  height: 50px;
+  box-shadow: none;
+  border: none;
+  font-size: 1.4rem;
+  outline: none;
+  background: var(--primary-color);
+  padding-left: 10px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.search-concert {
+  /* width: 100%; */
+  color: var(--concerts-font-color);
+  font-weight: 800;
+  /* background: var(--stage-silesia-color); */
+  padding: 0.5rem;
+  border: 3px solid var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.search-concert__title {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.search-concert__stage {
+  font-size: 0.7rem;
+}
+.search-concert__day {
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.5rem;
+}
+
+.search-concert__time {
+  margin: 0;
+  padding: 0;
+}

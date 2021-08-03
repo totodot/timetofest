@@ -79,3 +79,21 @@ export const changeLocalStorageSettings = (values) => {
 };
 
 export const getLocalStorageSettings = () => getLSValue(LSSettingsKey);
+
+const parseScene = (scene, day) =>
+  scene.concerts.reduce((all, concert) => {
+    return [
+      ...all,
+      { ...concert, dayName: day.name, dayDate: day.date, sceneName: scene.name, stage: scene.id },
+    ];
+  }, []);
+
+const parseTimetable = (day) =>
+  day.timetable.reduce((all, scene) => {
+    return [...all, ...parseScene(scene, day)];
+  }, []);
+
+export const getPlainConcerts = (config) =>
+  config.reduce((all, day) => {
+    return [...all, ...parseTimetable(day)];
+  }, []);

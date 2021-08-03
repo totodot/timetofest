@@ -12,6 +12,7 @@ import {
   changeLocalStorageSettings,
 } from './utils';
 import Settings from './Settings';
+import SearchModal from './SearchModal';
 
 const getActiveDayId = (config) => {
   const current = new Date();
@@ -33,6 +34,7 @@ function App() {
   const [isFavActive, setIsFavActive] = useState(false);
   const [mapOpen, setMapOpen] = useState(false);
   const [busOpen, setBusOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(lsSettings.darkMode || false);
   const [sticky, setSticky] = useState(false);
@@ -40,6 +42,7 @@ function App() {
   const openMap = () => {
     setMapOpen(!mapOpen);
   };
+  const openSearch = () => setSearchOpen((v) => !v);
   const openBus = () => {
     setBusOpen(!busOpen);
   };
@@ -84,9 +87,6 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>
-          <span>CZAS NA FEST 2021 </span>
-        </h1>
         <div id="menu-top" />
         <div className="menu">
           {config.map(({ id, name, date }) => (
@@ -117,6 +117,9 @@ function App() {
           </div>
           <div className="button  menu__item" onClick={openBus}>
             <span role="img">🚌</span>
+          </div>
+          <div className="button  menu__item" onClick={openSearch}>
+            <span role="img">🔍</span>
           </div>
           <div
             className={`button  menu__item ${darkMode ? 'button_active' : ''}`}
@@ -154,6 +157,9 @@ function App() {
           <div className="button  menu__item" onClick={openBus}>
             <span role="img">🚌</span>
           </div>
+          <div className="button  menu__item" onClick={openSearch}>
+            <span role="img">🔍</span>
+          </div>
           <div
             className={`button  menu__item ${darkMode ? 'button_active' : ''}`}
             onClick={() => setDarkMode((mode) => !mode)}
@@ -175,6 +181,11 @@ function App() {
         {busOpen && (
           <Modal open={busOpen} onToggle={openBus}>
             <Bus></Bus>
+          </Modal>
+        )}
+        {searchOpen && (
+          <Modal open={searchOpen} onToggle={openSearch}>
+            <SearchModal />
           </Modal>
         )}
         {settingsOpen && (

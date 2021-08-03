@@ -51,7 +51,7 @@ function Concert(props) {
           {getPeriodTime(start, end, extraInfo)}
         </div>
         <div className="concert__artist">{name}</div>
-        {cellHeight > 50 && hourWidth > 75 && (
+        {cellHeight> 50 && hourWidth > 75 && (
           <div className="concert__youtube" onClick={(e) => open(e, name)}>
             <img className="concert__youtube-logo" src={logo} />
           </div>

@@ -92,7 +92,7 @@ function Timetable(props) {
           </div>
         ))}
         {timetable.map(({ id, concerts }) => (
-          <div className="timeline" style={{height: cellHeight}} key={id}>
+          <div className="timeline" style={{ height: cellHeight }} key={id}>
             {concerts.map((concert) => (
               <Concert
                 key={concert.id}
