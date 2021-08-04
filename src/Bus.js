@@ -3,6 +3,7 @@ import React from 'react';
 
 const Bus = () =>(
     <div className="bus">
+     <h1>ell</h1>
       <h1 className="bus__title">Komunikacja miejska na trasie: Katowice - Fest Festival</h1>
         <a target="_blank" href="https://rj.metropoliaztm.pl/rozklady/1-t-6/45131/">ROZKŁAD</a>
       <p>

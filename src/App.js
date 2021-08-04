@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './App.css';
 import Timetable from './Timetable';
 import Modal from './Modal';
@@ -10,8 +10,14 @@ import {
   existInLS,
   getLocalStorageSettings,
   changeLocalStorageSettings,
+  getFavsFromLS,
+  removeFromLS,
+  addToLS,
 } from './utils';
 import Settings from './Settings';
+import SearchModal from './SearchModal';
+
+export const FavContext = React.createContext('fav');
 
 const getActiveDayId = (config) => {
   const current = new Date();
@@ -27,33 +33,49 @@ const getActiveDayId = (config) => {
 
 function App() {
   const lsSettings = getLocalStorageSettings();
+  const [favs, setFavs] = useState(getFavsFromLS() || []);
   const [hourWidth, setHourWidth] = useState(lsSettings.hourWidth || 75);
   const [cellHeight, setCellHeight] = useState(lsSettings.cellHeight || 70);
   const [activeDayId, setActiveDatId] = useState(getActiveDayId(config));
   const [isFavActive, setIsFavActive] = useState(false);
   const [mapOpen, setMapOpen] = useState(false);
   const [busOpen, setBusOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(lsSettings.darkMode || false);
   const [sticky, setSticky] = useState(false);
 
+  const onChangeFavs = (id) => {
+    if (favs.includes(id)) {
+      setFavs(favs.filter((fav) => fav !== id));
+      removeFromLS(id);
+    } else {
+      setFavs([...favs, id]);
+      addToLS(id);
+    }
+  };
+
   const openMap = () => {
     setMapOpen(!mapOpen);
   };
+  const openSearch = () => setSearchOpen((v) => !v);
   const openBus = () => {
     setBusOpen(!busOpen);
   };
   const openSettings = () => setSettingsOpen((v) => !v);
 
   const { timetable } = config.find(({ id }) => id === activeDayId);
-  const filteredTimetable = isFavActive
-    ? timetable.map(({ concerts, ...rest }) => {
+  const favTimetable = useMemo(
+    () =>
+      timetable.map(({ concerts, ...rest }) => {
         return {
           ...rest,
           concerts: concerts.filter(({ id }) => existInLS(id)),
         };
-      })
-    : timetable;
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [timetable, isFavActive]
+  );
 
   useEffect(() => {
     changeLocalStorageSettings({ darkMode });
@@ -82,11 +104,13 @@ function App() {
     observer.current.observe(document.querySelector('#menu-top'));
   }, []);
   return (
-    <>
+    <FavContext.Provider
+      value={{
+        favs,
+        onChangeFavs,
+      }}
+    >
       <div className="App">
-        <h1>
-          <span>CZAS NA FEST 2021</span>
-        </h1>
         <div id="menu-top" />
         <div className="menu">
           {config.map(({ id, name, date }) => (
@@ -112,11 +136,14 @@ function App() {
           <div className="button  menu__item" onClick={openSettings}>
             <span role="img">⚙️</span>
           </div>
-          <div className="button  menu__item" onClick={openMap}>
+          {/* <div className="button  menu__item" onClick={openMap}>
             <span role="img">🗺️</span>
           </div>
           <div className="button  menu__item" onClick={openBus}>
             <span role="img">🚌</span>
+          </div> */}
+          <div className="button  menu__item" onClick={openSearch}>
+            <span role="img">🔍</span>
           </div>
           <div
             className={`button  menu__item ${darkMode ? 'button_active' : ''}`}
@@ -148,11 +175,14 @@ function App() {
           <div className="button  menu__item" onClick={openSettings}>
             <span role="img">⚙️</span>
           </div>
-          <div className="button  menu__item" onClick={openMap}>
+          {/* <div className="button  menu__item" onClick={openMap}>
             <span role="img">🗺️</span>
           </div>
           <div className="button  menu__item" onClick={openBus}>
             <span role="img">🚌</span>
+          </div> */}
+          <div className="button  menu__item" onClick={openSearch}>
+            <span role="img">🔍</span>
           </div>
           <div
             className={`button  menu__item ${darkMode ? 'button_active' : ''}`}
@@ -163,7 +193,7 @@ function App() {
         </div>
 
         <Timetable
-          timetable={filteredTimetable}
+          timetable={isFavActive ? favTimetable : timetable}
           hourWidth={hourWidth}
           cellHeight={cellHeight}
         />
@@ -177,6 +207,11 @@ function App() {
             <Bus></Bus>
           </Modal>
         )}
+        {searchOpen && (
+          <Modal open={searchOpen} onToggle={openSearch}>
+            <SearchModal />
+          </Modal>
+        )}
         {settingsOpen && (
           <Modal open={settingsOpen} onToggle={openSettings}>
             <Settings
@@ -188,7 +223,7 @@ function App() {
           </Modal>
         )}
       </div>
-    </>
+    </FavContext.Provider>
   );
 }
 

@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import Map from './Map';
 
 const modalRoot = document.getElementById('modal-root');
 
+export const ModalContext = React.createContext('modal');
 class Modal extends React.Component {
   constructor(props) {
     super(props);
@@ -22,16 +23,21 @@ class Modal extends React.Component {
   render() {
     return ReactDOM.createPortal(
       this.props.open ? (
-        <ModalComponent onToggle={this.props.onToggle}>
-          {this.props.children}
-        </ModalComponent>
+        <ModalContext.Provider
+          value={{
+            onToggle: this.props.onToggle,
+          }}
+        >
+          <ModalComponent>{this.props.children}</ModalComponent>
+        </ModalContext.Provider>
       ) : null,
       this.el
     );
   }
 }
 
-const ModalComponent = ({ children, onToggle }) => {
+const ModalComponent = ({ children }) => {
+  const {onToggle} = useContext(ModalContext)
   const modalEl = useRef(null);
   useEffect(() => {
     disableBodyScroll(modalEl.current);

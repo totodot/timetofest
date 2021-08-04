@@ -53,6 +53,7 @@ export const getLSValue = (key) =>
 const setLSValue = (value, key) =>
   localStorage.setItem(key, JSON.stringify(value));
 
+export const getFavsFromLS = () => getLSValue(LSkey);
 export const addToLS = (id) => {
   const fav = getLSValue(LSkey);
   setLSValue([...fav, id], LSkey);
@@ -69,10 +70,37 @@ export const removeFromLS = (id) => {
 
 export const changeLocalStorageSettings = (values) => {
   const settings = getLSValue(LSSettingsKey);
-  setLSValue({
-    ...(settings || {}),
-    ...values,
-  }, LSSettingsKey);
+  setLSValue(
+    {
+      ...(settings || {}),
+      ...values,
+    },
+    LSSettingsKey
+  );
 };
 
-export const getLocalStorageSettings = () => getLSValue(LSSettingsKey)
+export const getLocalStorageSettings = () => getLSValue(LSSettingsKey);
+
+const parseScene = (scene, day) =>
+  scene.concerts.reduce((all, concert) => {
+    return [
+      ...all,
+      {
+        ...concert,
+        dayName: day.name,
+        dayDate: day.date,
+        sceneName: scene.name,
+        stage: scene.id,
+      },
+    ];
+  }, []);
+
+const parseTimetable = (day) =>
+  day.timetable.reduce((all, scene) => {
+    return [...all, ...parseScene(scene, day)];
+  }, []);
+
+export const getPlainConcerts = (config) =>
+  config.reduce((all, day) => {
+    return [...all, ...parseTimetable(day)];
+  }, []);

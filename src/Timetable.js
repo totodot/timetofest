@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useContext } from 'react';
 import { getWidth, getOffset, getTime } from './utils';
 import Concert from './Concert';
 import ScrollContainer from 'react-indiana-drag-scroll';
+import { FavContext } from './App';
 
 const isMobile =
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -21,6 +22,7 @@ const getHourPeriods = (min, max) => {
 };
 
 function Timetable(props) {
+  const favCtx = useContext(FavContext);
   const { timetable, hourWidth, cellHeight } = props;
   const [currentDate, setCurrentDate] = useState(new Date());
   const scrollRef = React.createRef();
@@ -92,12 +94,14 @@ function Timetable(props) {
           </div>
         ))}
         {timetable.map(({ id, concerts }) => (
-          <div className="timeline" style={{height: cellHeight}} key={id}>
+          <div className="timeline" style={{ height: cellHeight }} key={id}>
             {concerts.map((concert) => (
               <Concert
                 key={concert.id}
                 {...concert}
                 stage={id}
+                isFav={favCtx.favs.includes(concert.id)}
+                onToggle={() => favCtx.onChangeFavs(concert.id)}
                 getOffset={getPercentageOffset}
                 hourWidth={hourWidth}
                 cellHeight={cellHeight}
@@ -107,7 +111,7 @@ function Timetable(props) {
         ))}
         {concerts.length === 0 && (
           <div className="no-selection">
-            😔😔😔Please select your favourite concerts.
+            😔😔😔Zaserduszkuj sobie jakieś koncerty
           </div>
         )}
       </div>

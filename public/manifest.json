@@ -1,6 +1,6 @@
 {
-  "short_name": "FEST TIME",
-  "name": "Fest Festival Timetable",
+  "short_name": "CZAS NA FEST",
+  "name": "CZAS NA FEST - TIMETABLE",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#222222",
   "background_color": "#ffffff"
 }
