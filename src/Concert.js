@@ -17,19 +17,11 @@ function Concert(props) {
     stage,
     extraText,
     extraInfo,
-    id,
+    isFav,
+    onToggle,
     hourWidth,
     cellHeight,
   } = props;
-  const [isFav, setIsFav] = useState(existInLS(id));
-  const click = () => {
-    if (isFav) {
-      removeFromLS(id);
-    } else {
-      addToLS(id);
-    }
-    setIsFav(existInLS(id));
-  };
   const open = (e, name) => {
     e.stopPropagation();
     window.open(
@@ -45,7 +37,7 @@ function Concert(props) {
     <div className="concert-wrapper" style={style}>
       <div
         className={`concert concert_${stage} ${isFav ? 'concert_active' : ''}`}
-        onClick={click}
+        onClick={onToggle}
       >
         <div className="concert__time">
           {getPeriodTime(start, end, extraInfo)}

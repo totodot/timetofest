@@ -53,6 +53,7 @@ export const getLSValue = (key) =>
 const setLSValue = (value, key) =>
   localStorage.setItem(key, JSON.stringify(value));
 
+export const getFavsFromLS = () => getLSValue(LSkey);
 export const addToLS = (id) => {
   const fav = getLSValue(LSkey);
   setLSValue([...fav, id], LSkey);
@@ -84,7 +85,13 @@ const parseScene = (scene, day) =>
   scene.concerts.reduce((all, concert) => {
     return [
       ...all,
-      { ...concert, dayName: day.name, dayDate: day.date, sceneName: scene.name, stage: scene.id },
+      {
+        ...concert,
+        dayName: day.name,
+        dayDate: day.date,
+        sceneName: scene.name,
+        stage: scene.id,
+      },
     ];
   }, []);
 

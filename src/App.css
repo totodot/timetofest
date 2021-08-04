@@ -471,10 +471,10 @@ a {
   color: var(--concerts-font-color);
   position: relative;
   font-weight: 800;
-  /* background: var(--stage-silesia-color); */
   padding: 0.5rem;
   border: 3px solid var(--secondary-color);
   margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .search-concert__title {

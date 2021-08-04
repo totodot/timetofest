@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useContext } from 'react';
 import { getWidth, getOffset, getTime } from './utils';
 import Concert from './Concert';
 import ScrollContainer from 'react-indiana-drag-scroll';
+import { FavContext } from './App';
 
 const isMobile =
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -21,6 +22,7 @@ const getHourPeriods = (min, max) => {
 };
 
 function Timetable(props) {
+  const favCtx = useContext(FavContext);
   const { timetable, hourWidth, cellHeight } = props;
   const [currentDate, setCurrentDate] = useState(new Date());
   const scrollRef = React.createRef();
@@ -98,6 +100,8 @@ function Timetable(props) {
                 key={concert.id}
                 {...concert}
                 stage={id}
+                isFav={favCtx.favs.includes(concert.id)}
+                onToggle={() => favCtx.onChangeFavs(concert.id)}
                 getOffset={getPercentageOffset}
                 hourWidth={hourWidth}
                 cellHeight={cellHeight}

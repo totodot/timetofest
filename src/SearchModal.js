@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import { FavContext } from './App';
 import config from './config';
 import { ModalContext } from './Modal';
 import { getDayName, getPeriodTime, getPlainConcerts } from './utils';
@@ -7,6 +8,7 @@ const concerts = getPlainConcerts(config);
 
 const SearchModal = () => {
   const modalCtx = useContext(ModalContext);
+  const favCtx = useContext(FavContext);
   const [query, setQuery] = useState('');
   const onChangeQuery = (e) => setQuery(e.target.value);
   const inputRef = useRef();
@@ -50,6 +52,7 @@ const SearchModal = () => {
         ) : null}
         {filteredConcerts.map((concert) => (
           <div
+            onClick={() => favCtx.onChangeFavs(concert.id)}
             key={concert.id}
             className={`search-concert concert_${concert.stage}`}
           >
@@ -67,7 +70,9 @@ const SearchModal = () => {
               </span>
             </p>
             <div
-              className={`concert__fav ${true ? 'concert__fav_active' : ''}`}
+              className={`concert__fav ${
+                favCtx.favs.includes(concert.id) ? 'concert__fav_active' : ''
+              }`}
             >
               <div className="concert__heart">
                 <span>❤️</span>
