@@ -28,7 +28,7 @@ class Modal extends React.Component {
             onToggle: this.props.onToggle,
           }}
         >
-          <ModalComponent>{this.props.children}</ModalComponent>
+          <ModalComponent disable={this.props.disable}>{this.props.children}</ModalComponent>
         </ModalContext.Provider>
       ) : null,
       this.el
@@ -36,15 +36,18 @@ class Modal extends React.Component {
   }
 }
 
-const ModalComponent = ({ children }) => {
-  const {onToggle} = useContext(ModalContext)
+const ModalComponent = ({ children, disable = true }) => {
+  const { onToggle } = useContext(ModalContext);
   const modalEl = useRef(null);
   useEffect(() => {
+    if (!disable) {
+      return;
+    }
     disableBodyScroll(modalEl.current);
     return () => {
       enableBodyScroll(modalEl.current);
     };
-  }, []);
+  }, [disable]);
   return (
     <div className="modal" ref={modalEl}>
       <div className="modal__content">

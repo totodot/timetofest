@@ -454,6 +454,7 @@ a {
 }
 
 .search-input {
+  border-radius: 0;
   width: 100%;
   height: 50px;
   box-shadow: none;

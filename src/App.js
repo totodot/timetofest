@@ -208,7 +208,7 @@ function App() {
           </Modal>
         )}
         {searchOpen && (
-          <Modal open={searchOpen} onToggle={openSearch}>
+          <Modal open={searchOpen} onToggle={openSearch} disable={false}>
             <SearchModal />
           </Modal>
         )}
