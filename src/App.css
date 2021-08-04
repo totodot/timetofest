@@ -4,8 +4,9 @@
   --stage-silesia-color: #4bf8ad;
   --stage-new-color: #ffe793;
   --stage-smolna-color: #74fea8;
-  --stage-raban-color: #fefd7f;
-  --stage-astral-color: #fe53fa;
+  --stage-raban-color: #7571e7;
+  --stage-astral-color: #E330C6;
+  --stage-eden-color: #ff8561;
   --cell-height: 70px;
   --primary-color: #fff;
   --secondary-color: #000;
@@ -20,12 +21,13 @@
   --stage-silesia-color: #44df9c;
   --stage-new-color: #e6d084;
   --stage-smolna-color: #68e597;
-  --stage-raban-color: #e5e472;
+  --stage-raban-color: #7571e7;
   --stage-astral-color: #bf3ebc;
-  --primary-color: #161625;
+  --primary-color: #222222;
+  --stage-eden-color: #ff8561;
   --secondary-color: #fff;
   --font-color: #fff;
-  --bg-color: #161625;
+  --bg-color: #222222;
   --heading-color: #818cab;
   --concerts-font-color: #000;
 }
@@ -244,6 +246,10 @@ h1 span {
   background-color: var(--stage-astral-color);
 }
 
+.concert_eden {
+  background-color: var(--stage-eden-color);
+}
+
 .time,
 .grid {
   position: absolute;
@@ -410,6 +416,7 @@ a {
 }
 
 .search-modal__close {
+  cursor: pointer;
   background: var(--primary-color);
   color: var(--secondary-color);
   display: flex;
