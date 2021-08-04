@@ -130,7 +130,7 @@ h1 span {
 
 .timelines {
   cursor: grab;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 .timelines__scroll {
