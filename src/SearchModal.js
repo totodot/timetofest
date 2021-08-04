@@ -35,7 +35,9 @@ const SearchModal = () => {
           onChange={onChangeQuery}
           placeholder="Poszukaj sobie"
         />
-        <div className="search-modal__close" onClick={modalCtx.onToggle}>CLOSE</div>
+        <div className="search-modal__close" onClick={modalCtx.onToggle}>
+          CLOSE
+        </div>
       </div>
       <div className="search-modal__list">
         {!query.length && (
@@ -64,6 +66,13 @@ const SearchModal = () => {
                 )
               </span>
             </p>
+            <div
+              className={`concert__fav ${true ? 'concert__fav_active' : ''}`}
+            >
+              <div className="concert__heart">
+                <span>❤️</span>
+              </div>
+            </div>
           </div>
         ))}
       </div>

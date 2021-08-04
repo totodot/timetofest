@@ -51,15 +51,17 @@ function Concert(props) {
           {getPeriodTime(start, end, extraInfo)}
         </div>
         <div className="concert__artist">{name}</div>
-        {cellHeight> 50 && hourWidth > 75 && (
+        {cellHeight > 50 && hourWidth > 75 && (
           <div className="concert__youtube" onClick={(e) => open(e, name)}>
             <img className="concert__youtube-logo" src={logo} />
           </div>
         )}
         <div className="concert__extra">{extraText}</div>
-        <div
-          className={`concert__fav ${isFav ? 'concert__fav_active' : ''}`}
-        ></div>
+        <div className={`concert__fav ${isFav ? 'concert__fav_active' : ''}`}>
+          <div className="concert__heart">
+            <span>❤️</span>
+          </div>
+        </div>
       </div>
     </div>
   );

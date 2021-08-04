@@ -5,7 +5,7 @@
   --stage-new-color: #ffe793;
   --stage-smolna-color: #74fea8;
   --stage-raban-color: #7571e7;
-  --stage-astral-color: #E330C6;
+  --stage-astral-color: #e330c6;
   --stage-eden-color: #ff8561;
   --cell-height: 70px;
   --primary-color: #fff;
@@ -202,14 +202,19 @@ h1 span {
   font-size: 0.6em;
 }
 
+.concert__heart {
+}
+
 .concert__fav {
   position: absolute;
   top: 0;
   right: 0;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   background: var(--secondary-color);
-  transform: translate(50%, -50%) rotate(45deg);
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -464,10 +469,11 @@ a {
 .search-concert {
   /* width: 100%; */
   color: var(--concerts-font-color);
+  position: relative;
   font-weight: 800;
   /* background: var(--stage-silesia-color); */
   padding: 0.5rem;
-  border: 3px solid var(--primary-color);
+  border: 3px solid var(--secondary-color);
   margin-bottom: 5px;
 }
 
