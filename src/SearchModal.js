@@ -16,8 +16,9 @@ const SearchModal = () => {
     query.length > 0
       ? concerts.filter((concert) => {
           const name = concert.name.toLowerCase();
+          const extraInfo = (concert.extraInfo || '').toLowerCase() || '';
           const q = query.toLowerCase();
-          return name.indexOf(q) > -1;
+          return name.indexOf(q) > -1 || extraInfo.indexOf(q) > -1;
         })
       : [];
 
@@ -57,7 +58,10 @@ const SearchModal = () => {
             className={`search-concert concert_${concert.stage}`}
           >
             <span className="search-concert__stage">{concert.sceneName}</span>
-            <p className="search-concert__title">{concert.name}</p>
+            <p className="search-concert__title">
+              {concert.name}
+              <span className="search-concert__extra">{concert.extraInfo}</span>
+            </p>
 
             <p className="search-concert__time">
               {`${getPeriodTime(concert.start, concert.end)}`}

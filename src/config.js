@@ -2001,7 +2001,7 @@ export default [
           {
             id: 'giorgia_angiuli',
             name: 'Giorgia Angiuli',
-            extraInfo: 'LIVE',
+            extraInfo: 'live',
             start: '2021-08-15T01:00',
             end: '2021-08-15T02:00',
           },

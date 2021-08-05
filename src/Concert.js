@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  getWidthByDate,
-  getPeriodTime,
-  existInLS,
-  addToLS,
-  removeFromLS,
-} from './utils';
+import { getWidthByDate, getPeriodTime } from './utils';
 import logo from './logo.svg';
 
 function Concert(props) {
@@ -48,6 +42,9 @@ function Concert(props) {
             <img className="concert__youtube-logo" src={logo} />
           </div>
         )}
+        <div className="concert__time">
+          <span> {extraInfo}</span>
+        </div>
         <div className="concert__extra">{extraText}</div>
         <div className={`concert__fav ${isFav ? 'concert__fav_active' : ''}`}>
           <div className="concert__heart">
