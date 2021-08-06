@@ -20,7 +20,6 @@ import ReactGA from 'react-ga';
 
 export const FavContext = React.createContext('fav');
 const TRACKING_ID = 'UA-151949465-3';
-ReactGA.initialize(TRACKING_ID);
 
 const getActiveDayId = (config) => {
   const current = new Date();
@@ -104,6 +103,8 @@ function App() {
   );
 
   useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+    console.log('ReactGA initialized');
     observer.current.observe(document.querySelector('#menu-top'));
   }, []);
   return (
