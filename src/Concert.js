@@ -43,7 +43,7 @@ function Concert(props) {
           </div>
         )}
         <div className="concert__time">
-          <span> {extraInfo}</span>
+          {extraInfo && extraInfo !== '?' && <span>{extraInfo}</span>}
         </div>
         <div className="concert__extra">{extraText}</div>
         <div className={`concert__fav ${isFav ? 'concert__fav_active' : ''}`}>
