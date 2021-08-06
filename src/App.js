@@ -16,7 +16,6 @@ import {
 } from './utils';
 import Settings from './Settings';
 import SearchModal from './SearchModal';
-import ReactGA from 'react-ga';
 
 export const FavContext = React.createContext('fav');
 const TRACKING_ID = 'UA-151949465-3';
@@ -103,8 +102,7 @@ function App() {
   );
 
   useEffect(() => {
-    ReactGA.initialize(TRACKING_ID);
-    console.log('ReactGA initialized');
+    // ReactGA.initialize(TRACKING_ID);
     observer.current.observe(document.querySelector('#menu-top'));
   }, []);
   return (
