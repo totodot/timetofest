@@ -1,1394 +1,3 @@
-const a = [
-  {
-    id: 'kygo',
-    name: 'Kygo',
-  },
-  {
-    id: 'james_bay',
-    name: 'James Bay',
-  },
-  {
-    id: 'paul_kalkbrenner',
-    name: 'Paul Kalkbrenner',
-  },
-  {
-    id: 'nothing_but_thieves',
-    name: 'Nothing But Thieves',
-  },
-  {
-    id: 'alan_walker',
-    name: 'Alan Walker',
-  },
-  {
-    id: 'mata',
-    name: 'Mata',
-  },
-  {
-    id: 'purple_disco_machine',
-    name: 'Purple Disco Machine',
-  },
-  {
-    id: 'princess_nokia',
-    name: 'Princess Nokia',
-  },
-  {
-    id: 'robin_schulz',
-    name: 'Robin Schulz',
-  },
-  {
-    id: 'sam_feldt_live',
-    name: 'Sam Feldt Live',
-  },
-  {
-    id: 'bakermat',
-    name: 'Bakermat',
-  },
-  {
-    id: 'kungs',
-    name: 'Kungs',
-  },
-  {
-    id: 'kerala_dust_live',
-    name: 'Kerala Dust Live',
-  },
-  {
-    id: 'ofenbach',
-    name: 'Ofenbach',
-  },
-  {
-    id: 'aurora',
-    name: 'Aurora',
-  },
-  {
-    id: 'tomm¥_€a$h',
-    name: 'TOMM¥ €A$H',
-  },
-  {
-    id: 'boys_noize',
-    name: 'Boys Noize',
-  },
-  {
-    id: 'slowthai',
-    name: 'slowthai',
-  },
-  {
-    id: 'the_blaze',
-    name: 'The Blaze',
-  },
-  {
-    id: 'smith_&_thell',
-    name: 'Smith & Thell',
-  },
-  {
-    id: 'jax_jones',
-    name: 'Jax Jones',
-  },
-  {
-    id: 'undadasea',
-    name: 'Undadasea',
-  },
-  {
-    id: 'oio',
-    name: 'OIO',
-  },
-  {
-    id: 'fukaj',
-    name: 'FUKAJ',
-  },
-  {
-    id: 'janusz_walczuk',
-    name: 'Janusz Walczuk',
-  },
-  {
-    id: 'chocolate_puma',
-    name: 'Chocolate Puma',
-  },
-  {
-    id: 'hania_rani',
-    name: 'Hania Rani',
-  },
-  {
-    id: 'pezet',
-    name: 'Pezet',
-  },
-  {
-    id: 'kazy_lambist',
-    name: 'Kazy Lambist',
-  },
-  {
-    id: 'kiasmos_dj_set',
-    name: 'Kiasmos DJ Set',
-  },
-  {
-    id: 'sanah',
-    name: 'sanah',
-  },
-  {
-    id: 'mery_spolsky',
-    name: 'Mery Spolsky',
-  },
-  {
-    id: 'rasmentalism',
-    name: 'Rasmentalism',
-  },
-  {
-    id: 'kwiat_jabłoni',
-    name: 'Kwiat Jabłoni',
-  },
-  {
-    id: 'miły_atz',
-    name: 'Miły ATZ',
-  },
-  {
-    id: 'jan_rapowanie',
-    name: 'Jan Rapowanie',
-  },
-  {
-    id: 'sokół',
-    name: 'Sokół',
-  },
-  {
-    id: 'daria_zawiałow',
-    name: 'Daria Zawiałow',
-  },
-  {
-    id: 'ralph_kaminski',
-    name: 'Ralph Kaminski',
-  },
-  {
-    id: 'matisse_&_sadko',
-    name: 'Matisse & Sadko',
-  },
-  {
-    id: 'sobel',
-    name: 'Sobel',
-  },
-  {
-    id: 'kayah_&_bregović',
-    name: 'Kayah & Bregović',
-  },
-  {
-    id: 'sohn',
-    name: 'Sohn',
-  },
-  {
-    id: 'tchami',
-    name: 'Tchami',
-  },
-  {
-    id: 'pro8l3m',
-    name: 'PRO8L3M',
-  },
-  {
-    id: 'krzysztof_zalewski',
-    name: 'Krzysztof Zalewski',
-  },
-  {
-    id: 'dillon',
-    name: 'Dillon',
-  },
-  {
-    id: 'jan_blomqvist_&_band',
-    name: 'Jan Blomqvist & Band',
-  },
-  {
-    id: 'mura_masa',
-    name: 'Mura Masa',
-  },
-  {
-    id: 'natalia_przybysz',
-    name: 'Natalia Przybysz',
-  },
-  {
-    id: 'żabson',
-    name: 'Żabson',
-  },
-  {
-    id: 'vito_bambino',
-    name: 'Vito Bambino',
-  },
-  {
-    id: 'miętha',
-    name: 'Miętha',
-  },
-  {
-    id: 'schafter',
-    name: 'Schafter',
-  },
-  {
-    id: 'tymek',
-    name: 'Tymek',
-  },
-  {
-    id: 'mrozu',
-    name: 'Mrozu',
-  },
-  {
-    id: 'jan_serce',
-    name: 'Jan Serce',
-  },
-  {
-    id: 'catchup_&_hodak',
-    name: 'CatchUp & Hodak',
-  },
-  {
-    id: 'sonbird',
-    name: 'Sonbird',
-  },
-  {
-    id: 'bass_astral_x_igo',
-    name: 'Bass Astral x Igo',
-  },
-  {
-    id: 'bedoes',
-    name: 'Bedoes',
-  },
-  {
-    id: 'baasch_live',
-    name: 'Baasch Live',
-  },
-  {
-    id: 'bloo_crane',
-    name: 'Bloo Crane',
-  },
-  {
-    id: 'ummet_ozcan',
-    name: 'Ummet Ozcan',
-  },
-  {
-    id: 'jwp/bc',
-    name: 'JWP/BC',
-  },
-  {
-    id: 'kacperczyk',
-    name: 'Kacperczyk',
-  },
-  {
-    id: 'julia_pośnik',
-    name: 'Julia Pośnik',
-  },
-  {
-    id: 'enrico_sangiuliano',
-    name: 'Enrico Sangiuliano',
-  },
-  {
-    id: 'kamp!',
-    name: 'KAMP!',
-  },
-  {
-    id: 'zdechły_osa',
-    name: 'Zdechły Osa',
-  },
-  {
-    id: 'naviband',
-    name: 'Naviband',
-  },
-  {
-    id: 'victor_ruiz',
-    name: 'Victor Ruiz',
-  },
-  {
-    id: 'einmusik',
-    name: 'EINMUSIK',
-  },
-  {
-    id: 'denis_horvat',
-    name: 'Denis Horvat',
-  },
-  {
-    id: 'cocolino',
-    name: 'Cocolino',
-  },
-  {
-    id: 'agoria',
-    name: 'Agoria',
-  },
-  {
-    id: 'adamformat._/',
-    name: 'adamformat. /',
-  },
-  {
-    id: 'atom',
-    name: 'Atom',
-  },
-  {
-    id: 'handra',
-    name: 'Handra',
-  },
-  {
-    id: 'krzyku',
-    name: 'Krzyku',
-  },
-  {
-    id: 'mad_/cannabeatz/',
-    name: 'MAD /Cannabeatz/',
-  },
-  {
-    id: 'mampi_swift',
-    name: 'Mampi Swift',
-  },
-  {
-    id: 'n_o_i',
-    name: 'N O I',
-  },
-  {
-    id: 'ros_addiction',
-    name: 'ROS addiction',
-  },
-  {
-    id: 'sick',
-    name: 'Sick',
-  },
-  {
-    id: 'some_minds',
-    name: 'Some Minds',
-  },
-  {
-    id: 'bog',
-    name: 'BOg',
-  },
-  {
-    id: 'adana_twins',
-    name: 'Adana Twins',
-  },
-  {
-    id: 'lilly_palmer',
-    name: 'Lilly Palmer',
-  },
-  {
-    id: 'bart_skils',
-    name: 'Bart Skils',
-  },
-  {
-    id: 'beskres',
-    name: 'Beskres',
-  },
-  {
-    id: 'giorgia_angiuli',
-    name: 'Giorgia Angiuli',
-  },
-  {
-    id: 'duss',
-    name: 'DUSS',
-  },
-  {
-    id: 'a.m.c',
-    name: 'A.M.C',
-  },
-  {
-    id: 'al/so',
-    name: 'AL/SO',
-  },
-  {
-    id: 'bad_company_uk',
-    name: 'Bad Company UK',
-  },
-  {
-    id: 'bifidus_aktif',
-    name: 'Bifidus Aktif',
-  },
-  {
-    id: 'buhhaj',
-    name: 'BUHHAJ',
-  },
-  {
-    id: 'dillinja',
-    name: 'Dillinja',
-  },
-  {
-    id: 'dirty_doe',
-    name: 'Dirty Doe',
-  },
-  {
-    id: 'dj_hype',
-    name: 'DJ Hype',
-  },
-  {
-    id: 'dj_marky_+_mc_gq',
-    name: 'DJ Marky + MC GQ',
-  },
-  {
-    id: 'document_one_+_mc_felon',
-    name: 'Document One + MC Felon',
-  },
-  {
-    id: 'emperor',
-    name: 'Emperor',
-  },
-  {
-    id: 'ferro',
-    name: 'Ferro',
-  },
-  {
-    id: 'friction',
-    name: 'Friction',
-  },
-  {
-    id: 'ginee',
-    name: 'Ginee',
-  },
-  {
-    id: 'tekitoka',
-    name: 'Tekitoka',
-  },
-  {
-    id: 'greenhouse_effect',
-    name: 'Greenhouse Effect',
-  },
-  {
-    id: 'hash',
-    name: 'Hash',
-  },
-  {
-    id: 'kanine',
-    name: 'Kanine',
-  },
-  {
-    id: 'wax',
-    name: 'Wax',
-  },
-  {
-    id: 'keeno',
-    name: 'Keeno',
-  },
-  {
-    id: 'kove',
-    name: 'Kove',
-  },
-  {
-    id: 'maduk',
-    name: 'Maduk',
-  },
-  {
-    id: 'mia_twin',
-    name: 'Mia Twin',
-  },
-  {
-    id: 'phace',
-    name: 'Phace',
-  },
-  {
-    id: 'pogan',
-    name: 'POGAN',
-  },
-  {
-    id: 'protest',
-    name: 'Protest',
-  },
-  {
-    id: 'harriet_jaxxon',
-    name: 'Harriet Jaxxon',
-  },
-  {
-    id: 'tilt',
-    name: 'Tilt',
-  },
-  {
-    id: 'tom_encore',
-    name: 'Tom Encore',
-  },
-  {
-    id: 'unglued',
-    name: 'Unglued',
-  },
-  {
-    id: 'wonter',
-    name: 'Wonter',
-  },
-  {
-    id: 'captain_hook',
-    name: 'Captain Hook',
-  },
-  {
-    id: 'cj_art',
-    name: 'CJ ART',
-  },
-  {
-    id: 'deedrah',
-    name: 'Deedrah',
-  },
-  {
-    id: 'dreddy',
-    name: 'Dreddy',
-  },
-  {
-    id: 'dzida',
-    name: 'Dzida',
-  },
-  {
-    id: 'egorythmia',
-    name: 'Egorythmia',
-  },
-  {
-    id: 'eitan_reiter_live',
-    name: 'Eitan Reiter Live',
-  },
-  {
-    id: 'gaudium',
-    name: 'Gaudium',
-  },
-  {
-    id: 'havaya',
-    name: 'Havaya',
-  },
-  {
-    id: 'jara_luca',
-    name: 'Jara Luca',
-  },
-  {
-    id: 'jot',
-    name: 'Jot',
-  },
-  {
-    id: 'koda_kade',
-    name: 'Koda Kade',
-  },
-  {
-    id: 'laughing_buddha',
-    name: 'Laughing Buddha',
-  },
-  {
-    id: 'magik',
-    name: 'Magik',
-  },
-  {
-    id: 'main_ape',
-    name: 'Main Ape',
-  },
-  {
-    id: 'nois',
-    name: 'Nois',
-  },
-  {
-    id: 'out_of_orbit_live',
-    name: 'Out of Orbit live',
-  },
-  {
-    id: 'primal',
-    name: 'Primal',
-  },
-  {
-    id: 'sourone',
-    name: 'SourOne',
-  },
-  {
-    id: 'transwave',
-    name: 'Transwave',
-  },
-  {
-    id: 'tromesa',
-    name: 'Tromesa',
-  },
-  {
-    id: 'jedimaster',
-    name: 'Jedimaster',
-  },
-  {
-    id: 'be_svendsen_live',
-    name: 'Be Svendsen Live',
-  },
-  {
-    id: 'behrouz',
-    name: 'Behrouz',
-  },
-  {
-    id: 'catz_‘n_dogz',
-    name: 'Catz ‘n Dogz',
-  },
-  {
-    id: 'commander_love',
-    name: 'Commander Love',
-  },
-  {
-    id: 'deaf_can_dance',
-    name: 'Deaf Can Dance',
-  },
-  {
-    id: 'electronic_elephant',
-    name: 'Electronic Elephant',
-  },
-  {
-    id: 'enigmatic',
-    name: 'Enigmatic',
-  },
-  {
-    id: 'eelke_kleijn',
-    name: 'Eelke Kleijn',
-  },
-  {
-    id: 'el_mundo',
-    name: 'El Mundo',
-  },
-  {
-    id: 'esther_silex',
-    name: 'Esther Silex',
-  },
-  {
-    id: 'filip_sonik_b2b_mihvu',
-    name: 'Filip Sonik b2b Mihvu',
-  },
-  {
-    id: 'glasse',
-    name: 'Glasse',
-  },
-  {
-    id: 'kapoor',
-    name: 'Kapoor',
-  },
-  {
-    id: 'la_fleur',
-    name: 'La Fleur',
-  },
-  {
-    id: 'marcus_meinhardt',
-    name: 'Marcus Meinhardt',
-  },
-  {
-    id: 'mira_b2b_chris_schwarzwälder',
-    name: 'Mira b2b Chris Schwarzwälder',
-  },
-  {
-    id: 'oceanvs_orientalis_live',
-    name: 'Oceanvs Orientalis Live',
-  },
-  {
-    id: 'parra_for_cuva_live',
-    name: 'Parra for Cuva Live',
-  },
-  {
-    id: 'piotr_ho_b2b_kuak',
-    name: 'Piotr HO b2b KUAK',
-  },
-  {
-    id: 'raidho_b2b_foxall',
-    name: 'Raidho b2b Foxall',
-  },
-  {
-    id: 'rampue_live',
-    name: 'Rampue Live',
-  },
-  {
-    id: 'rodriguez_jr.',
-    name: 'Rodriguez Jr.',
-  },
-  {
-    id: 'satori_live',
-    name: 'Satori Live',
-  },
-  {
-    id: 'skarby_dj_set',
-    name: 'Skarby DJ set',
-  },
-  {
-    id: 'soukie_&_windish',
-    name: 'Soukie & Windish',
-  },
-  {
-    id: 'tiga',
-    name: 'Tiga',
-  },
-  {
-    id: 'whomadewho_hybrid',
-    name: 'WhoMadeWho Hybrid',
-  },
-  {
-    id: 'worakls_live',
-    name: 'Worakls Live',
-  },
-  {
-    id: 'igor_marijuan',
-    name: 'Igor Marijuan',
-  },
-  {
-    id: 'aurora',
-    name: 'Aurora',
-  },
-  {
-    id: 'tomm¥_€a$h',
-    name: 'TOMM¥ €A$H',
-  },
-  {
-    id: 'boys_noize',
-    name: 'Boys Noize',
-  },
-  {
-    id: 'rasmentalism',
-    name: 'Rasmentalism',
-  },
-  {
-    id: 'daria_zawiałow',
-    name: 'Daria Zawiałow',
-  },
-  {
-    id: 'mura_masa',
-    name: 'Mura Masa',
-  },
-  {
-    id: 'julia_pośnik',
-    name: 'Julia Pośnik',
-  },
-  {
-    id: 'schafter',
-    name: 'Schafter',
-  },
-  {
-    id: 'vito_bambino',
-    name: 'Vito Bambino',
-  },
-  {
-    id: 'bedoes',
-    name: 'Bedoes',
-  },
-  {
-    id: 'fukaj',
-    name: 'FUKAJ',
-  },
-  {
-    id: 'miętha',
-    name: 'Miętha',
-  },
-  {
-    id: 'tchami',
-    name: 'Tchami',
-  },
-  {
-    id: 'dillinja',
-    name: 'Dillinja',
-  },
-  {
-    id: 'chocolate_puma',
-    name: 'Chocolate Puma',
-  },
-  {
-    id: 'baasch_live',
-    name: 'Baasch Live',
-  },
-  {
-    id: 'dirty_doe',
-    name: 'Dirty Doe',
-  },
-  {
-    id: 'kanine',
-    name: 'Kanine',
-  },
-  {
-    id: 'tekitoka',
-    name: 'Tekitoka',
-  },
-  {
-    id: 'deedrah',
-    name: 'Deedrah',
-  },
-  {
-    id: 'dzida',
-    name: 'Dzida',
-  },
-  {
-    id: 'havaya',
-    name: 'Havaya',
-  },
-  {
-    id: 'catz_‘n_dogz',
-    name: 'Catz ‘n Dogz',
-  },
-  {
-    id: 'glasse',
-    name: 'Glasse',
-  },
-  {
-    id: 'la_fleur',
-    name: 'La Fleur',
-  },
-  {
-    id: 'rodriguez_jr.',
-    name: 'Rodriguez Jr.',
-  },
-  {
-    id: 'alan_walker',
-    name: 'Alan Walker',
-  },
-  {
-    id: 'purple_disco_machine',
-    name: 'Purple Disco Machine',
-  },
-  {
-    id: 'sam_feldt_live',
-    name: 'Sam Feldt Live',
-  },
-  {
-    id: 'slowthai',
-    name: 'slowthai',
-  },
-  {
-    id: 'princess_nokia',
-    name: 'Princess Nokia',
-  },
-  {
-    id: 'pezet',
-    name: 'Pezet',
-  },
-  {
-    id: 'kiasmos_dj_set',
-    name: 'Kiasmos DJ Set',
-  },
-  {
-    id: 'sanah',
-    name: 'sanah',
-  },
-  {
-    id: 'kwiat_jabłoni',
-    name: 'Kwiat Jabłoni',
-  },
-  {
-    id: 'jan_rapowanie',
-    name: 'Jan Rapowanie',
-  },
-  {
-    id: 'kamp!',
-    name: 'KAMP!',
-  },
-  {
-    id: 'zdechły_osa',
-    name: 'Zdechły Osa',
-  },
-  {
-    id: 'krzysztof_zalewski',
-    name: 'Krzysztof Zalewski',
-  },
-  {
-    id: 'bass_astral_x_igo',
-    name: 'Bass Astral x Igo',
-  },
-  {
-    id: 'dillon',
-    name: 'Dillon',
-  },
-  {
-    id: 'kerala_dust_live',
-    name: 'Kerala Dust Live',
-  },
-  {
-    id: 'jax_jones',
-    name: 'Jax Jones',
-  },
-  {
-    id: 'jan_blomqvist_&_band',
-    name: 'Jan Blomqvist & Band',
-  },
-  {
-    id: 'kacperczyk',
-    name: 'Kacperczyk',
-  },
-  {
-    id: 'agoria',
-    name: 'Agoria',
-  },
-  {
-    id: 'some_minds',
-    name: 'Some Minds',
-  },
-  {
-    id: 'einmusik',
-    name: 'EINMUSIK',
-  },
-  {
-    id: 'bog',
-    name: 'BOg',
-  },
-  {
-    id: 'adana_twins',
-    name: 'Adana Twins',
-  },
-  {
-    id: 'bifidus_aktif',
-    name: 'Bifidus Aktif',
-  },
-  {
-    id: 'emperor',
-    name: 'Emperor',
-  },
-  {
-    id: 'keeno',
-    name: 'Keeno',
-  },
-  {
-    id: 'dj_hype',
-    name: 'DJ Hype',
-  },
-  {
-    id: 'wax',
-    name: 'Wax',
-  },
-  {
-    id: 'kove',
-    name: 'Kove',
-  },
-  {
-    id: 'protest',
-    name: 'Protest',
-  },
-  {
-    id: 'wonter',
-    name: 'Wonter',
-  },
-  {
-    id: 'jedimaster',
-    name: 'Jedimaster',
-  },
-  {
-    id: 'jot',
-    name: 'Jot',
-  },
-  {
-    id: 'laughing_buddha',
-    name: 'Laughing Buddha',
-  },
-  {
-    id: 'transwave',
-    name: 'Transwave',
-  },
-  {
-    id: 'electronic_elephant',
-    name: 'Electronic Elephant',
-  },
-  {
-    id: 'enigmatic',
-    name: 'Enigmatic',
-  },
-  {
-    id: 'esther_silex',
-    name: 'Esther Silex',
-  },
-  {
-    id: 'kapoor',
-    name: 'Kapoor',
-  },
-  {
-    id: 'mira_b2b_chris_schwarzwälder',
-    name: 'Mira b2b Chris Schwarzwälder',
-  },
-  {
-    id: 'rampue_live',
-    name: 'Rampue Live',
-  },
-  {
-    id: 'soukie_&_windish',
-    name: 'Soukie & Windish',
-  },
-  {
-    id: 'igor_marijuan',
-    name: 'Igor Marijuan',
-  },
-  {
-    id: 'bakermat',
-    name: 'Bakermat',
-  },
-  {
-    id: 'kungs',
-    name: 'Kungs',
-  },
-  {
-    id: 'paul_kalkbrenner',
-    name: 'Paul Kalkbrenner',
-  },
-  {
-    id: 'mata',
-    name: 'Mata',
-  },
-  {
-    id: 'the_blaze',
-    name: 'The Blaze',
-  },
-  {
-    id: 'mery_spolsky',
-    name: 'Mery Spolsky',
-  },
-  {
-    id: 'żabson',
-    name: 'Żabson',
-  },
-  {
-    id: 'naviband',
-    name: 'Naviband',
-  },
-  {
-    id: 'ralph_kaminski',
-    name: 'Ralph Kaminski',
-  },
-  {
-    id: 'sobel',
-    name: 'Sobel',
-  },
-  {
-    id: 'kayah_&_bregović',
-    name: 'Kayah & Bregović',
-  },
-  {
-    id: 'sohn',
-    name: 'Sohn',
-  },
-  {
-    id: 'sonbird',
-    name: 'Sonbird',
-  },
-  {
-    id: 'tymek',
-    name: 'Tymek',
-  },
-  {
-    id: 'jwp/bc',
-    name: 'JWP/BC',
-  },
-  {
-    id: 'catchup_&_hodak',
-    name: 'CatchUp & Hodak',
-  },
-  {
-    id: 'ummet_ozcan',
-    name: 'Ummet Ozcan',
-  },
-  {
-    id: 'bloo_crane',
-    name: 'Bloo Crane',
-  },
-  {
-    id: 'handra',
-    name: 'Handra',
-  },
-  {
-    id: 'victor_ruiz',
-    name: 'Victor Ruiz',
-  },
-  {
-    id: 'lilly_palmer',
-    name: 'Lilly Palmer',
-  },
-  {
-    id: 'bart_skils',
-    name: 'Bart Skils',
-  },
-  {
-    id: 'duss',
-    name: 'DUSS',
-  },
-  {
-    id: 'al/so',
-    name: 'AL/SO',
-  },
-  {
-    id: 'bad_company_uk',
-    name: 'Bad Company UK',
-  },
-  {
-    id: 'dj_marky_+_mc_gq',
-    name: 'DJ Marky + MC GQ',
-  },
-  {
-    id: 'ros_addiction',
-    name: 'ROS addiction',
-  },
-  {
-    id: 'harriet_jaxxon',
-    name: 'Harriet Jaxxon',
-  },
-  {
-    id: 'greenhouse_effect',
-    name: 'Greenhouse Effect',
-  },
-  {
-    id: 'hash',
-    name: 'Hash',
-  },
-  {
-    id: 'phace',
-    name: 'Phace',
-  },
-  {
-    id: 'pogan',
-    name: 'POGAN',
-  },
-  {
-    id: 'tilt',
-    name: 'Tilt',
-  },
-  {
-    id: 'tom_encore',
-    name: 'Tom Encore',
-  },
-  {
-    id: 'unglued',
-    name: 'Unglued',
-  },
-  {
-    id: 'cj_art',
-    name: 'CJ ART',
-  },
-  {
-    id: 'dreddy',
-    name: 'Dreddy',
-  },
-  {
-    id: 'gaudium',
-    name: 'Gaudium',
-  },
-  {
-    id: 'koda_kade',
-    name: 'Koda Kade',
-  },
-  {
-    id: 'magik',
-    name: 'Magik',
-  },
-  {
-    id: 'main_ape',
-    name: 'Main Ape',
-  },
-  {
-    id: 'primal',
-    name: 'Primal',
-  },
-  {
-    id: 'tromesa',
-    name: 'Tromesa',
-  },
-  {
-    id: 'deaf_can_dance',
-    name: 'Deaf Can Dance',
-  },
-  {
-    id: 'eelke_kleijn',
-    name: 'Eelke Kleijn',
-  },
-  {
-    id: 'oceanvs_orientalis_live',
-    name: 'Oceanvs Orientalis Live',
-  },
-  {
-    id: 'parra_for_cuva_live',
-    name: 'Parra for Cuva Live',
-  },
-  {
-    id: 'piotr_ho_b2b_kuak',
-    name: 'Piotr HO b2b KUAK',
-  },
-  {
-    id: 'raidho_b2b_foxall',
-    name: 'Raidho b2b Foxall',
-  },
-  {
-    id: 'satori_live',
-    name: 'Satori Live',
-  },
-  {
-    id: 'skarby_dj_set',
-    name: 'Skarby DJ set',
-  },
-  {
-    id: 'whomadewho_hybrid',
-    name: 'WhoMadeWho Hybrid',
-  },
-  {
-    id: 'kygo',
-    name: 'Kygo',
-  },
-  {
-    id: 'ofenbach',
-    name: 'Ofenbach',
-  },
-  {
-    id: 'pro8l3m',
-    name: 'PRO8L3M',
-  },
-  {
-    id: 'robin_schulz',
-    name: 'Robin Schulz',
-  },
-  {
-    id: 'nothing_but_thieves',
-    name: 'Nothing But Thieves',
-  },
-  {
-    id: 'smith_&_thell',
-    name: 'Smith & Thell',
-  },
-  {
-    id: 'oio',
-    name: 'OIO',
-  },
-  {
-    id: 'undadasea',
-    name: 'Undadasea',
-  },
-  {
-    id: 'natalia_przybysz',
-    name: 'Natalia Przybysz',
-  },
-  {
-    id: 'hania_rani',
-    name: 'Hania Rani',
-  },
-  {
-    id: 'janusz_walczuk',
-    name: 'Janusz Walczuk',
-  },
-  {
-    id: 'miły_atz',
-    name: 'Miły ATZ',
-  },
-  {
-    id: 'matisse_&_sadko',
-    name: 'Matisse & Sadko',
-  },
-  {
-    id: 'jan_serce',
-    name: 'Jan Serce',
-  },
-  {
-    id: 'kazy_lambist',
-    name: 'Kazy Lambist',
-  },
-  {
-    id: 'james_bay',
-    name: 'James Bay',
-  },
-  {
-    id: 'sokół',
-    name: 'Sokół',
-  },
-  {
-    id: 'mrozu',
-    name: 'Mrozu',
-  },
-  {
-    id: 'enrico_sangiuliano',
-    name: 'Enrico Sangiuliano',
-  },
-  {
-    id: 'denis_horvat',
-    name: 'Denis Horvat',
-  },
-  {
-    id: 'cocolino',
-    name: 'Cocolino',
-  },
-  {
-    id: 'krzyku',
-    name: 'Krzyku',
-  },
-  {
-    id: 'atom',
-    name: 'Atom',
-  },
-  {
-    id: 'mad_/cannabeatz/',
-    name: 'MAD /Cannabeatz/',
-  },
-  {
-    id: 'mampi_swift',
-    name: 'Mampi Swift',
-  },
-  {
-    id: 'sick',
-    name: 'Sick',
-  },
-  {
-    id: 'beskres',
-    name: 'Beskres',
-  },
-  {
-    id: 'giorgia_angiuli',
-    name: 'Giorgia Angiuli',
-  },
-  {
-    id: 'a.m.c',
-    name: 'A.M.C',
-  },
-  {
-    id: 'buhhaj',
-    name: 'BUHHAJ',
-  },
-  {
-    id: 'document_one_+_mc_felon',
-    name: 'Document One + MC Felon',
-  },
-  {
-    id: 'ferro',
-    name: 'Ferro',
-  },
-  {
-    id: 'friction',
-    name: 'Friction',
-  },
-  {
-    id: 'ginee',
-    name: 'Ginee',
-  },
-  {
-    id: 'maduk',
-    name: 'Maduk',
-  },
-  {
-    id: 'mia_twin',
-    name: 'Mia Twin',
-  },
-  {
-    id: 'captain_hook',
-    name: 'Captain Hook',
-  },
-  {
-    id: 'eitan_reiter_live',
-    name: 'Eitan Reiter Live',
-  },
-  {
-    id: 'jara_luca',
-    name: 'Jara Luca',
-  },
-  {
-    id: 'nois',
-    name: 'Nois',
-  },
-  {
-    id: 'out_of_orbit_live',
-    name: 'Out of Orbit live',
-  },
-  {
-    id: 'sourone',
-    name: 'SourOne',
-  },
-  {
-    id: 'be_svendsen_live',
-    name: 'Be Svendsen Live',
-  },
-  {
-    id: 'behrouz',
-    name: 'Behrouz',
-  },
-  {
-    id: 'commander_love',
-    name: 'Commander Love',
-  },
-  {
-    id: 'el_mundo',
-    name: 'El Mundo',
-  },
-  {
-    id: 'filip_sonik_b2b_mihvu',
-    name: 'Filip Sonik b2b Mihvu',
-  },
-  {
-    id: 'marcus_meinhardt',
-    name: 'Marcus Meinhardt',
-  },
-  {
-    id: 'tiga',
-    name: 'Tiga',
-  },
-  {
-    id: 'worakls_live',
-    name: 'Worakls Live',
-  },
-];
-
 export default [
   {
     id: 'day1',
@@ -1396,54 +5,118 @@ export default [
     shortName: 'D1',
     date: '2021-08-11',
     timetable: [
-      // {
-      //   id: 'main',
-      //   name: 'main',
-      //   concerts: [
-      //     {
-      //       id: '???',
-      //       name: '???',
-      //       start: '2021-08-11T16:00',
-      //       end: '2021-08-11T18:00',
-      //     },
-      //   ],
-      // },
-      // {
-      //   id: 'tent',
-      //   name: 'Coke TENT',
-      //   concerts: [
-      //     {
-      //       id: '???',
-      //       name: '???',
-      //       start: '2021-08-11T15:00',
-      //       end: '2021-08-11T17:00',
-      //     },
-      //   ],
-      // },
-      // {
-      //   id: 'silesia',
-      //   name: 'silesia',
-      //   concerts: [
-      //     {
-      //       id: '???',
-      //       name: '???',
-      //       start: '2021-08-11T14:00',
-      //       end: '2021-08-11T15:30',
-      //     },
-      //   ],
-      // },
-      // {
-      //   id: 'new',
-      //   name: 'new',
-      //   concerts: [
-      //     {
-      //       id: '???',
-      //       name: '???',
-      //       start: '2021-08-11T14:00',
-      //       end: '2021-08-11T15:30',
-      //     },
-      //   ],
-      // },
+      {
+        id: 'arena',
+        name: 'arena',
+        concerts: [
+          {
+            id: 'vito_bambino',
+            name: 'Vito Bambino',
+            start: '2021-08-11T17:00',
+            end: '2021-08-11T19:00',
+          },
+          {
+            id: 'daria_zawiałow',
+            name: 'Daria Zawiałow',
+            start: '2021-08-11T19:00',
+            end: '2021-08-11T21:30',
+          },
+          {
+            id: 'boys_noize',
+            name: 'Boys Noize',
+            start: '2021-08-11T21:30',
+            end: '2021-08-11T23:30',
+          },
+          {
+            id: 'chocolate_puma',
+            name: 'Chocolate Puma',
+            start: '2021-08-11T23:30',
+            end: '2021-08-12T01:30',
+          },
+          {
+            id: 'tchami',
+            name: 'Tchami',
+            start: '2021-08-12T01:30',
+            end: '2021-08-12T03:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'silesia',
+        name: 'silesia',
+        concerts: [
+          {
+            id: 'miętha',
+            name: 'Miętha',
+            start: '2021-08-11T14:30',
+            end: '2021-08-11T17:00',
+          },
+          {
+            id: 'julia_pośnik',
+            name: 'Julia Pośnik',
+            start: '2021-08-11T17:00',
+            end: '2021-08-11T20:00',
+          },
+          {
+            id: 'aurora',
+            name: 'Aurora',
+            start: '2021-08-11T20:00',
+            end: '2021-08-11T22:30',
+          },
+          {
+            id: 'baasch',
+            name: 'Baasch',
+            extraInfo: 'live',
+            start: '2021-08-11T22:30',
+            end: '2021-08-12T01:00',
+          },
+          {
+            id: 'mura_masa',
+            name: 'Mura Masa',
+            start: '2021-08-12T01:00',
+            end: '2021-08-12T03:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'tent',
+        name: 'tent',
+        concerts: [
+          {
+            id: 'fukaj',
+            name: 'FUKAJ',
+            start: '2021-08-11T15:30',
+            end: '2021-08-11T17:30',
+          },
+          {
+            id: 'rasmentalism',
+            name: 'Rasmentalism',
+            start: '2021-08-11T17:30',
+            end: '2021-08-11T19:30',
+          },
+          {
+            id: 'schafter',
+            name: 'Schafter',
+            start: '2021-08-11T19:30',
+            end: '2021-08-11T21:30',
+          },
+          {
+            id: 'bedoes',
+            name: 'Bedoes',
+            start: '2021-08-11T21:30',
+            end: '2021-08-12T00:00',
+          },
+          {
+            id: 'tomm¥_€a$h',
+            name: 'TOMM¥ €A$H',
+            start: '2021-08-12T00:00',
+            end: '2021-08-12T02:00',
+            extraInfo: '?',
+          },
+        ],
+      },
       {
         id: 'eden',
         name: 'eden',
@@ -1550,6 +223,150 @@ export default [
     shortName: 'D2',
     date: '2021-08-12',
     timetable: [
+      {
+        id: 'main',
+        name: 'main',
+        concerts: [
+          {
+            id: 'kwiat_jabłoni',
+            name: 'Kwiat Jabłoni',
+            start: '2021-08-12T18:00',
+            end: '2021-08-12T19:45',
+          },
+          {
+            id: 'krzysztof_zalewski',
+            name: 'Krzysztof Zalewski',
+            start: '2021-08-12T19:45',
+            end: '2021-08-12T21:30',
+          },
+          {
+            id: 'bass_astral_x_igo',
+            name: 'Bass Astral x Igo',
+            start: '2021-08-12T21:30',
+            end: '2021-08-12T23:30',
+          },
+          {
+            id: 'alan_walker',
+            name: 'Alan Walker',
+            start: '2021-08-12T23:30',
+            end: '2021-08-13T01:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'arena',
+        name: 'arena',
+        concerts: [
+          {
+            id: 'zdechły_osa',
+            name: 'Zdechły Osa',
+            start: '2021-08-12T17:00',
+            end: '2021-08-12T19:00',
+          },
+          {
+            id: 'sanah',
+            name: 'sanah',
+            start: '2021-08-12T19:00',
+            end: '2021-08-12T21:30',
+          },
+          {
+            id: 'jax_jones',
+            name: 'Jax Jones',
+            start: '2021-08-12T21:30',
+            end: '2021-08-12T23:15',
+          },
+          {
+            id: 'sam_feldt',
+            name: 'Sam Feldt',
+            extraInfo: 'live',
+            start: '2021-08-12T23:15',
+            end: '2021-08-13T01:30',
+          },
+          {
+            id: 'purple_disco_machine',
+            name: 'Purple Disco Machine',
+            start: '2021-08-13T01:30',
+            end: '2021-08-13T03:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'silesia',
+        name: 'silesia',
+        concerts: [
+          {
+            id: 'dillon',
+            name: 'Dillon',
+            start: '2021-08-12T14:30',
+            end: '2021-08-12T17:00',
+          },
+          {
+            id: 'kerala_dust',
+            name: 'Kerala Dust',
+            start: '2021-08-12T17:00',
+            end: '2021-08-12T20:00',
+          },
+          {
+            id: 'kamp!',
+            name: 'KAMP!',
+            start: '2021-08-12T20:00',
+            end: '2021-08-12T22:30',
+          },
+          {
+            id: 'jan_blomqvist',
+            name: 'Jan Blomqvist',
+            extraInfo: 'solo live',
+            start: '2021-08-12T22:30',
+            end: '2021-08-13T01:00',
+          },
+          {
+            id: 'kiasmos_dj_set',
+            name: 'Kiasmos DJ Set',
+            start: '2021-08-13T01:00',
+            end: '2021-08-13T03:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'tent',
+        name: 'tent',
+        concerts: [
+          {
+            id: 'kacperczyk',
+            name: 'Kacperczyk',
+            start: '2021-08-12T15:30',
+            end: '2021-08-12T17:30',
+          },
+          {
+            id: 'jan_rapowanie',
+            name: 'Jan Rapowanie',
+            start: '2021-08-12T17:30',
+            end: '2021-08-12T19:30',
+          },
+          {
+            id: 'princess_nokia',
+            name: 'Princess Nokia',
+            start: '2021-08-12T19:30',
+            end: '2021-08-12T21:30',
+          },
+          {
+            id: 'pezet',
+            name: 'Pezet',
+            start: '2021-08-12T21:30',
+            end: '2021-08-12T23:30',
+          },
+          {
+            id: 'slowthai',
+            name: 'slowthai',
+            start: '2021-08-12T23:30',
+            end: '2021-08-13T01:00',
+            extraInfo: '?',
+          },
+        ],
+      },
       {
         id: 'smolna',
         name: 'smolna',
@@ -1733,6 +550,149 @@ export default [
     shortName: 'D3',
     date: '2021-08-13',
     timetable: [
+      {
+        id: 'main',
+        name: 'main',
+        concerts: [
+          {
+            id: 'ralph_kaminski',
+            name: 'Ralph Kaminski',
+            start: '2021-08-13T18:00',
+            end: '2021-08-13T20:00',
+          },
+          {
+            id: 'kayah_&_bregović',
+            name: 'Kayah & Bregović',
+            start: '2021-08-13T20:00',
+            end: '2021-08-13T22:00',
+          },
+          {
+            id: 'mata',
+            name: 'Mata',
+            start: '2021-08-13T22:00',
+            end: '2021-08-13T23:30',
+          },
+          {
+            id: 'paul_kalkbrenner',
+            name: 'Paul Kalkbrenner',
+            start: '2021-08-13T23:30',
+            end: '2021-08-14T01:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'arena',
+        name: 'arena',
+        concerts: [
+          {
+            id: 'bloo_crane',
+            name: 'Bloo Crane',
+            start: '2021-08-13T17:00',
+            end: '2021-08-13T19:00',
+          },
+          {
+            id: 'mery_spolsky',
+            name: 'Mery Spolsky',
+            start: '2021-08-13T19:00',
+            end: '2021-08-13T21:30',
+          },
+          {
+            id: 'ummet_ozcan',
+            name: 'Ummet Ozcan',
+            start: '2021-08-13T21:30',
+            end: '2021-08-13T23:15',
+          },
+          {
+            id: 'kungs',
+            name: 'Kungs',
+            start: '2021-08-13T23:15',
+            end: '2021-08-14T01:30',
+          },
+          {
+            id: 'bakermat',
+            name: 'Bakermat',
+            start: '2021-08-14T01:30',
+            end: '2021-08-14T03:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'silesia',
+        name: 'silesia',
+        concerts: [
+          {
+            id: 'naviband',
+            name: 'Naviband',
+            start: '2021-08-13T14:30',
+            end: '2021-08-13T17:00',
+          },
+          {
+            id: 'sonbird',
+            name: 'Sonbird',
+            start: '2021-08-13T17:00',
+            end: '2021-08-13T20:00',
+          },
+          {
+            id: 'missio',
+            name: 'Missio',
+            start: '2021-08-13T20:00',
+            end: '2021-08-13T22:30',
+          },
+          {
+            id: 'sohn',
+            name: 'Sohn',
+            extraInfo: 'solo live',
+            start: '2021-08-13T22:30',
+            end: '2021-08-14T01:00',
+          },
+          {
+            id: 'the_blaze',
+            name: 'The Blaze DJ Set',
+            start: '2021-08-14T01:00',
+            end: '2021-08-14T03:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'tent',
+        name: 'tent',
+        concerts: [
+          {
+            id: 'catchup_&_hodak',
+            name: 'CatchUp & Hodak',
+            start: '2021-08-13T15:30',
+            end: '2021-08-13T17:30',
+          },
+          {
+            id: 'sobel',
+            name: 'Sobel',
+            start: '2021-08-13T17:30',
+            end: '2021-08-13T19:30',
+          },
+          {
+            id: 'jwp/bc',
+            name: 'JWP/BC',
+            start: '2021-08-13T19:30',
+            end: '2021-08-13T21:30',
+          },
+          {
+            id: 'żabson',
+            name: 'Żabson',
+            start: '2021-08-13T21:30',
+            end: '2021-08-13T23:30',
+          },
+          {
+            id: 'tymek',
+            name: 'Tymek',
+            start: '2021-08-13T23:30',
+            end: '2021-08-14T01:00',
+            extraInfo: '?',
+          },
+        ],
+      },
       {
         id: 'smolna',
         name: 'smolna',
@@ -1975,6 +935,150 @@ export default [
     shortName: 'D4',
     date: '2021-08-14',
     timetable: [
+      {
+        id: 'main',
+        name: 'main',
+        concerts: [
+          {
+            id: 'kensington',
+            name: 'Kensington',
+            start: '2021-08-14T18:00',
+            end: '2021-08-14T20:00',
+          },
+          {
+            id: 'pro8l3m',
+            name: 'PRO8L3M',
+            start: '2021-08-14T20:00',
+            end: '2021-08-14T21:30',
+          },
+          {
+            id: 'james_bay',
+            name: 'James Bay',
+            start: '2021-08-14T21:30',
+            end: '2021-08-14T23:30',
+          },
+          {
+            id: 'kygo',
+            name: 'Kygo',
+            start: '2021-08-14T23:30',
+            end: '2021-08-15T01:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'arena',
+        name: 'arena',
+        concerts: [
+          {
+            id: 'smith_&_thell',
+            name: 'Smith & Thell',
+            start: '2021-08-14T17:00',
+            end: '2021-08-14T19:00',
+          },
+          {
+            id: 'mrozu',
+            name: 'Mrozu',
+            start: '2021-08-14T19:00',
+            end: '2021-08-14T21:30',
+          },
+          {
+            id: 'ofenbach',
+            name: 'Ofenbach',
+            extraInfo: 'DJ Set',
+            start: '2021-08-14T21:30',
+            end: '2021-08-14T23:15',
+          },
+          {
+            id: 'matisse_&_sadko',
+            name: 'Matisse & Sadko',
+            start: '2021-08-14T23:15',
+            end: '2021-08-15T01:30',
+          },
+          {
+            id: 'robin_schulz',
+            name: 'Robin Schulz',
+            start: '2021-08-15T01:30',
+            end: '2021-08-15T03:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'silesia',
+        name: 'silesia',
+        concerts: [
+          {
+            id: 'jan_serce',
+            name: 'Jan Serce',
+            start: '2021-08-14T14:30',
+            end: '2021-08-14T17:00',
+          },
+          {
+            id: 'kazy_lambist',
+            name: 'Kazy Lambist',
+            start: '2021-08-14T17:00',
+            end: '2021-08-14T20:00',
+          },
+          {
+            id: 'hania_rani',
+            name: 'Hania Rani',
+            start: '2021-08-14T20:00',
+            end: '2021-08-14T22:30',
+          },
+          {
+            id: 'rysy_live',
+            name: 'Rysy LIVE',
+            extraInfo: 'solo live',
+            start: '2021-08-14T22:30',
+            end: '2021-08-15T01:00',
+          },
+          {
+            id: 'natalia_przybysz',
+            name: 'Natalia Przybysz',
+            start: '2021-08-15T01:00',
+            end: '2021-08-15T03:00',
+            extraInfo: '?',
+          },
+        ],
+      },
+      {
+        id: 'tent',
+        name: 'tent',
+        concerts: [
+          {
+            id: 'miły_atz',
+            name: 'Miły ATZ',
+            start: '2021-08-14T15:30',
+            end: '2021-08-14T17:30',
+          },
+          {
+            id: 'janusz_walczuk',
+            name: 'Janusz Walczuk',
+            start: '2021-08-14T17:30',
+            end: '2021-08-14T19:30',
+          },
+          {
+            id: 'undadasea',
+            name: 'Undadasea',
+            start: '2021-08-14T19:30',
+            end: '2021-08-14T21:30',
+          },
+          {
+            id: 'sokół',
+            name: 'Sokół',
+            start: '2021-08-14T21:30',
+            end: '2021-08-14T23:30',
+          },
+          {
+            id: 'oio',
+            name: 'OIO',
+            start: '2021-08-14T23:30',
+            end: '2021-08-15T01:00',
+            extraInfo: '?',
+          },
+        ],
+      },
       {
         id: 'smolna',
         name: 'smolna',

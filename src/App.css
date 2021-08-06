@@ -1,9 +1,10 @@
 :root {
   --stage-main-color: #fbfc87;
+  --stage-arena-color: #5EC5F9;
   --stage-tent-color: #ffaaf4;
-  --stage-silesia-color: #4bf8ad;
+  --stage-silesia-color: #74fea8;
   --stage-new-color: #ffe793;
-  --stage-smolna-color: #74fea8;
+  --stage-smolna-color: #4FD26A;
   --stage-raban-color: #7571e7;
   --stage-astral-color: #e330c6;
   --stage-eden-color: #ff8561;
@@ -17,10 +18,11 @@
 
 [data-theme='dark'] {
   --stage-main-color: #e2e37a;
+  --stage-arena-color: #5EC5F9;
   --stage-tent-color: #e699dc;
-  --stage-silesia-color: #44df9c;
+  --stage-silesia-color: #68e597;
   --stage-new-color: #e6d084;
-  --stage-smolna-color: #68e597;
+  --stage-smolna-color: #4FD26A;
   --stage-raban-color: #7571e7;
   --stage-astral-color: #bf3ebc;
   --primary-color: #222222;
@@ -225,6 +227,10 @@ h1 span {
 
 .concert_main {
   background-color: var(--stage-main-color);
+}
+
+.concert_arena {
+  background-color: var(--stage-arena-color);
 }
 
 .concert_tent {

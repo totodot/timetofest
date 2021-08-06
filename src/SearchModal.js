@@ -60,11 +60,19 @@ const SearchModal = () => {
             <span className="search-concert__stage">{concert.sceneName}</span>
             <p className="search-concert__title">
               {concert.name}
-              <span className="search-concert__extra">{concert.extraInfo}</span>
+              {concert.extraInfo && concert.extraInfo !== '?' && (
+                <span className="search-concert__extra">
+                  {concert.extraInfo}
+                </span>
+              )}
             </p>
 
             <p className="search-concert__time">
-              {`${getPeriodTime(concert.start, concert.end)}`}
+              {`${getPeriodTime(
+                concert.start,
+                concert.end,
+                concert.extraInfo
+              )}`}
               <span className="search-concert__day">
                 (
                 {`${getDayName(
