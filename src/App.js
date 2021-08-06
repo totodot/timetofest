@@ -16,8 +16,11 @@ import {
 } from './utils';
 import Settings from './Settings';
 import SearchModal from './SearchModal';
+import ReactGA from 'react-ga';
 
 export const FavContext = React.createContext('fav');
+const TRACKING_ID = 'G-SKV7NDF6BK';
+ReactGA.initialize(TRACKING_ID);
 
 const getActiveDayId = (config) => {
   const current = new Date();
