@@ -27,10 +27,13 @@ function Concert(props) {
     transform: `translateX(${getOffset(start)}px)`,
     width: `${width}px`,
   };
+  const isSmallWidth = hourWidth <= 75;
+  const isSmallHeight = cellHeight <= 50;
+  const isSmall = isSmallHeight && isSmallWidth;
   return (
     <div className="concert-wrapper" style={style}>
       <div
-        className={`concert concert_${stage} ${isFav ? 'concert_active' : ''}`}
+        className={`concert   concert_${stage} ${isFav ? 'concert_active' : ''} ${isSmall ? 'concert_small' : ''}`}
         onClick={onToggle}
       >
         <div className="concert__time">
