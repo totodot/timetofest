@@ -935,7 +935,7 @@ export default [
             id: 'kensington',
             name: 'Kensington',
             start: '2021-08-14T18:00',
-            end: '2021-08-14T219:00',
+            end: '2021-08-14T19:00',
           },
           {
             id: 'pro8l3m',
