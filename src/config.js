@@ -355,8 +355,8 @@ export default [
             end: '2021-08-12T23:00',
           },
           {
-            id: 'slowthai',
-            name: 'slowthai',
+            id: 'bialas_&_white_2115',
+            name: 'Białas & White 2115',
             start: '2021-08-12T23:30',
             end: '2021-08-13T01:00'
           },

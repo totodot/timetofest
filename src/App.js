@@ -138,10 +138,10 @@ function App() {
           <div className="button  menu__item" onClick={openSettings}>
             <span role="img">⚙️</span>
           </div>
-          {/* <div className="button  menu__item" onClick={openMap}>
+          <div className="button  menu__item" onClick={openMap}>
             <span role="img">🗺️</span>
           </div>
-          <div className="button  menu__item" onClick={openBus}>
+          {/* <div className="button  menu__item" onClick={openBus}>
             <span role="img">🚌</span>
           </div> */}
           <div className="button  menu__item" onClick={openSearch}>
@@ -177,10 +177,10 @@ function App() {
           <div className="button  menu__item" onClick={openSettings}>
             <span role="img">⚙️</span>
           </div>
-          {/* <div className="button  menu__item" onClick={openMap}>
+          <div className="button  menu__item" onClick={openMap}>
             <span role="img">🗺️</span>
           </div>
-          <div className="button  menu__item" onClick={openBus}>
+          {/* <div className="button  menu__item" onClick={openBus}>
             <span role="img">🚌</span>
           </div> */}
           <div className="button  menu__item" onClick={openSearch}>
